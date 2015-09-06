@@ -85,10 +85,10 @@ if (isset($_GET['id'])) {
      
       <div class="images">  
         <ul class="bxslider">
-          <li><img src="./images/p1.jpg" title="1" alt="1"></li>
-          <li><img src="./images/p2.jpg" title="2" alt="2"></li>
-          <li><img src="./images/p3.jpg" title="3" alt="3"></li>
-          <li><img src="./images/p4.jpg" title="3" alt="3"></li>
+          <li><img src="./images/p1.jpg" title="1" alt="写真1"></li>
+          <li><img src="./images/p2.jpg" title="2" alt="写真2"></li>
+          <li><img src="./images/p3.jpg" title="3" alt="写真3"></li>
+          <li><img src="./images/p4.jpg" title="4" alt="写真4"></li>
         </ul>
         <!--slide show-->
       </div>
