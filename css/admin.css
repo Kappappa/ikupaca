@@ -1,0 +1,117 @@
+@charset "UTF-8";
+form{
+  padding: 0.5rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+dd,form p{
+/*  text-indent: 1rem;*/
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+}
+main p{
+  text-indent: 1rem;
+  padding: 0 1rem;
+}
+h2{
+  padding: 1rem 0 0 2rem;
+  font-size: 1.5rem;
+  color: #0cc;
+}
+
+input[type=text],
+input[type=password]{
+	width: 80%;
+	height: 2rem;
+  font-size: 1.2rem;
+	vertical-align: middle;
+  border-radius: 10px/10px;
+  text-indent: 0.5rem;
+  background-color: #fcfcfc;
+}
+input[type=submit]{
+  width: 15rem;
+  margin: 0.5rem 0 0 0;
+	padding: 0.3rem 1rem;
+  font-size: 1.2rem;
+  background-color: #ddf;
+  color: #00f;
+	vertical-align: middle;
+/*  border-style: none;*/
+  text-align: center;
+  border-radius: 20px/20px;
+}
+input[type=submit]:hover{
+  background-color: #00f;
+  color: #fff;
+  border-style: solid;
+  transition: all 0.5s ease;
+}
+
+/*input[type=button],*/
+input[type=submit].redButton,
+input[type=button].redButton
+{
+  width: 15rem;
+  margin: 0.5rem 0 0 0;
+	padding: 0.3rem 1rem;
+  font-size: 1.2rem;
+  background-color: #fdd;
+  color: #f00;
+	vertical-align: middle;
+/*  border-style: none;*/
+  text-align: center;
+  border-radius: 20px/20px;
+}
+/*input[type=button]:hover,*/
+input[type=submit].redButton:hover,
+input[type=button].redButton:hover
+{
+  background-color: #f00;
+  color: #fff;
+  border-style: solid;
+  transition: all 0.5s ease;
+}
+main{
+  width: 100%;
+}
+#heightAdmin{
+  height: 650px;
+}
+#textAdmin,
+.newsAdmin
+{
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: #fcfcfc;
+  color: #000;
+}
+.newsAdminTime{
+  color: #00f;
+}
+.newsAdminTitle{
+  color: #000;
+}
+.newsAdminText{
+  text-indent: inherit;
+/*  padding-left: 2rem;*/
+}
+
+
+/*@media (max-width: 640px) {*/
+@media (max-width: 1000px) {
+  
+  #imageP
+  {
+    text-indent: inherit;
+  }
+  
+  
+}
+
+
+
+
+
+
