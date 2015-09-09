@@ -76,7 +76,7 @@ if (isset($_GET['id'])) {
     </ul>
     </div>
     <hr>
-    
+
   </header>
   <!-- header class="header" -->
 
