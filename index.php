@@ -105,6 +105,9 @@ if (isset($_GET['id'])) {
           <dt><a href="https://instagram.com/IKUPACA/" target="_blank">【Instagram】</a></dt>
           <dd></dd>
           <hr>
+          <dt><a href="./intro/index.php">※ サイト紹介 ※</a></dt>
+          <dd></dd>
+          <hr>
           <dt><a href="./contact.php">【お問い合わせ】</a></dt>
           <dd></dd>
           <hr>

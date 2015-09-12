@@ -16,13 +16,22 @@ body {
   line-height: 1.6;
   color: #000;
 }
+
+/*main*/
 main{
 /*  height: 700px;*/
 }
+#mainpage{
+  padding:1rem;
+}
+
+/*hr  点線*/
 hr{
   border:none;
-  border:1px solid #000;
+/*  border:1px dotted #fa0;*/
+  border:1px dashed #fa0;
 }
+
 /**/
 /*header*/
 
@@ -308,6 +317,92 @@ li.now a:visited{
   transition: all 0.5s ease;
 }
 
+/* Map */
+.map_ul{
+  width: 100%;
+}
+.intro_map{
+  width: 32%;
+  height: 300px;
+  margin-right: 0.5rem;
+}
+
+/* 紹介 */
+.intro{
+  line-height: 1.8;
+  margin: 0.5rem;
+  overflow:hidden;
+}
+.intro dl{
+  margin-bottom: 0.5rem;
+}
+.intro dt{
+  padding: 0.5rem;
+/*  display: inline;*/
+  width: 25rem;
+  font-size:1.2rem;
+  background-color: #ff0;
+   border-radius: 20px/20px;
+    border-top: 2px dashed #66f;
+    border-bottom: 2px dashed #66f;
+    box-shadow: 0 0 2px 2px #ff9;
+}
+.intro dd{
+  padding: 0 0 0 0.8rem;
+  line-height: 1.3;
+}
+.intro dd.ad{
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #66f;
+  line-height: 1.5;
+}
+.intro dd.bl{
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #66f;
+  line-height: 1.5;
+}
+.intro .intro_app,
+.intro .intro_int{
+  width: 31%;
+  min-width: 300px;
+  height: 300px;
+/*  background-color: #ccc;*/
+}
+.intro .intro_app{
+  margin-right: 0.5rem;
+}
+ul.fl{
+  width: 100%;
+  clear: both;
+}
+ul.fl li{
+  display: block;
+  float: left;
+}
+
+/*
+.intro .intro_app{
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  margin: 0.5rem
+}
+
+.intro .intro_app img{
+  margin: -0.5rem;
+}
+.intro .intro_int{
+  transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+}
+.intro .intro_int img{
+  margin: 0.5rem;
+}
+*/
+
 /*@media (max-width: 640px) {*/
 @media (max-width: 1000px) {
   .wrapper,
@@ -389,7 +484,23 @@ li.now a:visited{
   .content {
     padding: 0;
   }
-
+  
+  .intro dt{
+  padding: 0.2rem;
+  font-size: 1rem;
+  width: 17rem;
+  }
+  .intro_map{
+    width: 90%;
+  }
+  .intro .intro_app{
+    margin: 0.5rem 0 0 0;
+  }
+  .intro .intro_app,
+  .intro .intro_int{
+    width: 90%;
+    height: 90%;
+  }
   
 }
 
