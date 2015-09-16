@@ -93,6 +93,7 @@ if($_SESSION["id"]==ADMIN && $_SESSION["pass"]==PASS){
       <li><a href="./news.php">新着情報追加</a></li>
       <li><a href="./newsEdit.php">新着情報編集</a></li>
       <li><a href="./tw.php">つぶやき編集</a></li>
+      <li><a href="./twadd.php">つぶやき追加</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li class="now"><a href="./imageAll.php">画像一覧</a></li>
     </ul>

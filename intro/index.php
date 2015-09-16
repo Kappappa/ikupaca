@@ -30,6 +30,8 @@ include_once("../inc/MHClass.php");
 <!--<link rel="stylesheet" type="text/css" href="../css/admin.css">-->
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 //初期化
 var mapi = 1; // MAP用のナンバリング
@@ -80,7 +82,7 @@ function maping(id,name,ad,tel) {
         icon: icon,
         position: latlng,
         map: map,
-        title: 'Copain=A3'
+        title: name
     };
   /*----- マーカー描画 -----*/
   var marker = new google.maps.Marker(markerOptions);
@@ -167,24 +169,190 @@ function introR(int){
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
-</li>
+  </li>
 <!--  写真の高さは300px-->
-<!--  <li class="intro_app"><img width="100%" height="300px" src="../images/bg.jpg" alt="test"></li>-->
-  <li class="intro_app"><img width="100%" src="../images/bg.jpg" alt="test"></li>
-  <li class="intro_int"><img width="100%" src="../images/bg.jpg" alt="test"></li>
+  <li class="intro_app"><img width="100%" src="./images/copain1.jpg" alt="copain1"></li>
+  <li class="intro_int"><img width="100%" src="./images/copain2.jpg" alt="copain2"></li>
 </ul>
 </div>
 <hr class="hid">
 
 
+<div class="intro"> 
+<script type="text/javascript">
+  name = "ラ・カフェケニア京都店";
+  comment = "JR・地下鉄・近鉄京都駅から歩いて５分。<br>キャンパスプラザ京都の１階にあります。<br>会議・研修後のご休憩などにぜひご利用ください。";
+  ad = "〒600-8216 京都府京都市下京区西洞院通塩小路下る東塩小路町939";
+  tel = "TEL : 075-353-9150";
+  blog = 'サイト : <a href="http://k-kenya.sakura.ne.jp/shop/shop-kyoto.html" target="_blank">ラ・カフェケニア京都店</a>';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<ul class="fl">
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/cafe_kyoto1.jpg" alt="ラカフェケニア京都店1"></li>
+  <li class="intro_int"><img width="100%" src="./images/cafe_kyoto3.jpg" alt="ラカフェケニア京都店3"></li>
+</ul>
+</div>
+<hr class="hid">
 
 
+<div class="intro"> 
+<script type="text/javascript">
+  name = "ラ・カフェケニア宇治店";
+  comment = "宇治商工会議所1階にあります。";
+  ad = "〒611-0021 京都府宇治市宇治琵琶45−13";
+  tel = "TEL : 0774-21-3141";
+  blog = 'サイト : <a href="http://k-kenya.sakura.ne.jp/shop/shop-uji.html" target="_blank">ラ・カフェケニア宇治店</a>';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<ul class="fl">
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/cafe_uji1.jpg" alt="ラカフェケニア宇治店1"></li>
+  <li class="intro_int"><img width="100%" src="./images/cafe_uji2.jpg" alt="ラカフェケニア宇治店2"></li>
+</ul>
+</div>
+<hr class="hid">
 
+
+<div class="intro"> 
+<script type="text/javascript">
+  name = "Reos 槇島";
+  comment = "親子や高齢者など地域でのコミュニティの場です。<br>また地域の農家さんたちの協力で食育実践を目指し、自家農家(Reos畑)で野菜を作っています。<br>ランチでは主にReos畑で採れた、新鮮・無農薬野菜を使用しています。<br>営業時間11：30～16：30(定休日：土日祝日)";
+  ad = "〒611-0041 宇治市槇島町十一173-1 サンジェルマン1F";
+  tel = "TEL : 0774-66-1849";
+  blog = 'サイト : <a href="http://www.reos-makishima.com/index.html" target="_blank">Reos 槇島</a>';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<ul class="fl">
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/Reos1.jpg" alt="Reos 槇島1"></li>
+  <li class="intro_int"><img width="100%" src="./images/Reos2.jpg" alt="Reos 槇島2"></li>
+</ul>
+</div>
+<hr class="hid">
+
+
+<div class="intro"> 
+<script type="text/javascript">
+  name = "ヘアサロン e-ne";
+  comment = "e-neはエキテン口コミランキングで神戸1位を獲得した美容室です。<br>100坪のアジアンリゾート風の店内はゆったりとした癒しの空間です。<br>ヘッドスパやエステ、ネイルもさぁ、HPへ";
+  ad = "〒651-2144 兵庫県神戸市西区小山1-7-9";
+  tel = "TEL : 078-921-1155";
+  blog = 'サイト : <a href="http://www.e-ne.org/" target="_blank">神戸市西区ヘアサロン e-ne</a>';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<dl>
+<dd class="ad">また、e-neでは医療用wigを取り扱っております。<br>怪我や病気、抗ガン剤治療などの影響でお悩みの方の相談もお受けします。</dd>
+<dd class="bl">サイト：<a href="http://www.e-ne.org/wig_top.html" target="_blank">医療用wig</a></dd>
+</dl>
+<dl>
+<dd class="ad">e-ne美容室ikupacaページもあります。</dd>
+<dd class="bl">サイト：<a href="http://www.e-ne.org/ikupaca.html" target="_blank">ikupacaページ</a></dd>
+</dl>
+<ul class="fl">
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/hairsalon_e-ne1.jpg" alt=" ヘアサロン e-ne1"></li>
+  <li class="intro_int"><img width="100%" src="./images/hairsalon_e-ne3.jpg" alt="ヘアサロン e-ne2"></li>
+</ul>
+</div>
+<hr class="hid">
+
+
+<div class="intro"> 
+<script type="text/javascript">
+  name = "Ten Ants";
+  comment = "アーティストと呼ばれるすべての人たちを応援する店です。";
+  ad = "〒606-8117京都市左京区一乗寺里の前町106<br>(叡電一乗寺駅から商店街東へ。点滅信号を南へすぐ東側)";
+  tel = "TEL : 0774-66-1849";
+  blog = 'サイト : <a href="http://amdblo.jp/mami-101010/" target="_blank">Ten Ants</a>';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<ul class="fl">
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/TenAnts1.jpg" alt="TenAnts1"></li>
+  <li class="intro_int"><img width="100%" src="./images/TenAnts2.jpg" alt="TenAnts2"></li>
+</ul>
+</div>
+<hr class="hid">
 
 
 </main>
 
 <?php include_once("../tmp/footer.php"); ?>
+
+<div class="pagetop" style="position:fixed;right:5px;bottom:80px;"><a href="#mainpage"><img width="80" src="../images/top.png" alt="↑"></a></div>
 </article>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var pagetop = $('.pagetop');
+    $(window).scroll(function () {
+       if ($(this).scrollTop() > 400) {
+            pagetop.fadeIn();
+       } else {
+            pagetop.fadeOut();
+            }
+       });
+       pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   });
+});
+
+</script>
+
+
+
+
 </body>
 </html>
