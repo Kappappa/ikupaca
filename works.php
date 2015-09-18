@@ -64,8 +64,8 @@ if (isset($_GET['id'])) {
     <div class="navi">
      <ul>
       <li id="n2"><a href="./index.php">Home</a></li>
-      <li id="n3"><a class="now" href="./profile.php">Profile</a></li>
-      <li id="n4"><a href="./works.php">作品紹介</a></li>
+      <li id="n3"><a href="./profile.php">Profile</a></li>
+      <li id="n4"><a class="now" href="./works.php">作品紹介</a></li>
       <li id="n5"><a href="./intro/index.php">サイト紹介</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
@@ -84,15 +84,27 @@ if (isset($_GET['id'])) {
     <div class="content">
       <div id="p_con">
 
-        <h2 id="p_back">Profile</h2>
-        
-        <div id="pr">
-        <img class="profile" src="./images/profile.jpg" alt="profile">
-        <p>
-          京都宇治を拠点に活動しています。<br>二児の母。<br>カラフルを大切にベビーからご長寿まで愛されるようなものを日々ハンドメイドしています。<br>合言葉は<span class="ki">クレイジーゴナクレイジー</span>。<br>夢中になるとまらないという意味です。<br>そんなikupacaワールドを皆さんと体感し合いたいです。<br>不思議なアイテム、取り揃えております。
+        <h2 id="p_back2">作品紹介</h2>
+        <p id="wk1">
+        <a href="./works/20150918_2734.jpg" target="_blank"><img class="works" src="./works/20150918_2734.jpg" alt=""></a>
+        <a href="./works/20150918_3185.jpg" target="_blank"><img class="works" src="./works/20150918_3185.jpg" alt=""></a>
+        <a href="./works/20150918_4329.jpg" target="_blank"><img class="works" src="./works/20150918_4329.jpg" alt=""></a>
+        <a href="./works/20150918_4339.jpg" target="_blank"><img class="works" src="./works/20150918_4339.jpg" alt=""></a>
+        <a href="./works/20150918_4513.jpg" target="_blank"><img class="works" src="./works/20150918_4513.jpg" alt=""></a>
+        <a href="./works/20150918_4655.jpg" target="_blank"><img class="works" src="./works/20150918_4655.jpg" alt=""></a>
+        <a href="./works/20150918_4779.jpg" target="_blank"><img class="works" src="./works/20150918_4779.jpg" alt=""></a>
+        <a href="./works/20150918_5243.jpg" target="_blank"><img class="works" src="./works/20150918_5243.jpg" alt=""></a>
+        <a href="./works/20150918_5259.jpg" target="_blank"><img class="works" src="./works/20150918_5259.jpg" alt=""></a>
+        <a href="./works/20150918_5549.jpg" target="_blank"><img class="works" src="./works/20150918_5549.jpg" alt=""></a>
+        <a href="./works/20150918_5862.jpg" target="_blank"><img class="works" src="./works/20150918_5862.jpg" alt=""></a>
+        <a href="./works/20150918_5983.jpg" target="_blank"><img class="works" src="./works/20150918_5983.jpg" alt=""></a>
+        <a href="./works/20150918_6533.jpg" target="_blank"><img class="works" src="./works/20150918_6533.jpg" alt=""></a>
+        <a href="./works/20150918_7638.jpg" target="_blank"><img class="works" src="./works/20150918_7638.jpg" alt=""></a>
+        <a href="./works/20150918_7819.jpg" target="_blank"><img class="works" src="./works/20150918_7819.jpg" alt=""></a>
+        <a href="./works/20150918_8542.jpg" target="_blank"><img class="works" src="./works/20150918_8542.jpg" alt=""></a>
+        <a href="./works/20150918_8598.jpg" target="_blank"><img class="works" src="./works/20150918_8598.jpg" alt=""></a>
+        <a href="./works/20150918_9084.jpg" target="_blank"><img class="works" src="./works/20150918_9084.jpg" alt=""></a>
         </p>
-       </div>
-<!--       div#pr-->
        
       </div>
 <!--   div class="p_con"-->
@@ -103,6 +115,29 @@ if (isset($_GET['id'])) {
   <!-- div class="wrapper" -->
 
 <?php include_once("./tmp/footer.php"); ?>
+
+<div class="pagetop" style="position:fixed;right:5px;bottom:80px;"><a href="#mainpage"><img width="80" src="./images/top.png" alt="↑"></a></div>
+</article>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var pagetop = $('.pagetop');
+  pagetop.hide();
+    $(window).scroll(function () {
+       if ($(this).scrollTop() > 400) {
+            pagetop.fadeIn();
+       } else {
+            pagetop.fadeOut();
+            }
+       });
+       pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   });
+});
+
+</script>
+
 </article>
 </body>
 </html>

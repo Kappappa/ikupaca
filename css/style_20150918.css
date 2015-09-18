@@ -9,7 +9,7 @@
 }
 html{
   background-color: rgba(255, 238, 180, 0.75);
-/*  background-color: rgb(255, 254, 241);*/
+  background-color: rgb(255, 254, 241);
 }
 body {
   font-family: "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Noto Sans Japanese Regular", sans-serif;
@@ -42,8 +42,8 @@ hr{
 header {
   /*  border: 1px solid #edd;*/
 /*  background-color: rgb(255, 255, 255);*/
-  background-color: rgba(255, 238, 180, 0.75);
-/*  background-color: rgb(255, 254, 241);*/
+/*  background-color: rgba(255, 238, 180, 0.75);*/
+  background-color: rgb(255, 254, 241);
   width: 100%;
 /*  background-color: rgba(255, 0, 0, 0.3);*/
 /*
@@ -70,9 +70,6 @@ h1 {
   line-height:1.7;
 }
 
-a{
-}
-
 /*navi*/
 .navi{
   padding: 0.5rem 0;
@@ -87,147 +84,37 @@ a{
   margin: 0 0.2rem;
   float: left;
 }
-
 .navi li a{
-  color: #fff;
   display: block;
   width: 130px;
-  padding: 0.2rem 0.3rem;
-  margin: 0.4rem 0.05rem;
+  padding: 0.3rem 0.5rem;
   text-align: center;
   border-radius: 20px/20px;
-}
-
-/*navi n1*/
-.navi li#n1 a:link,
-.navi li#n1 a:visited{
-  background-color: rgba(255, 0, 0, 0.3);
-  transition: all 0.5s ease;
     border-top: 2px dashed #fee;
     border-bottom: 2px dashed #fdd;
     box-shadow: 0 0 2px 2px #f99;
+/*  text-shadow: -1px -1px #a33;*/
 }
-.navi li#n1 a:hover ,
-.navi li#n1 a.now{
+.navi li a:link,
+.navi li a:visited{
+  color: #f00;
+  background-color: rgba(255, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.navi li a:hover {
+  color: #fff;
   background-color: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 3px 3px #f33;
   transition: all 0.5s ease;
 }
-
-/*navi n2*/
-.navi li#n2 a:link,
-.navi li#n2 a:visited,
-li#n2 a:link{
-  background-color: rgba(255, 17, 153, 0.5);
-    box-shadow: 0 0 3px 3px #f19;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #fbc1ff;
-    border-bottom: 2px dashed #fbc1ff;
+li.now a,
+li.now a:link,
+li.now a:visited{
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 3px 3px #f33;
 }
-.navi li#n2 a:hover ,
-.navi li#n2 a.now{
-  background-color: rgba(255, 17, 153,1);
-  transition: all 0.5s ease;
-}
-
-/*navi n3*/
-.navi li#n3 a:link,
-.navi li#n3 a:visited,
-li#n3 a:link{
-  background-color: rgba(0, 177, 255, 0.5);
-    box-shadow: 0 0 3px 3px #0bf;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #2ef;
-    border-bottom: 2px dashed #2ef;
-}
-.navi li#n3 a:hover ,
-.navi li#n3 a.now{
-  background-color: rgba(0, 177, 255, 1);
-  transition: all 0.5s ease;
-}
-
-/*navi n4*/
-.navi li#n4 a:link,
-.navi li#n4 a:visited,
-li#n4 a:link{
-  background-color: rgba(220, 220, 0, 0.7);
-    box-shadow: 0 0 3px 3px #f6f600;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #ff0;
-    border-bottom: 2px dashed #ff0;
-}
-.navi li#n4 a:hover ,
-.navi li#n4 a.now{
-  color: #665cd9;
-  background-color: rgba(248, 248, 0, 1);
-  transition: all 0.5s ease;
-}
-
-/*navi n5*/
-.navi li#n5 a:link,
-.navi li#n5 a:visited,
-li#n5 a:link{
-  background-color: rgba(15, 195, 15, 0.4);
-    box-shadow: 0 0 3px 3px #0fc30f;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #dcfddc;
-    border-bottom: 2px dashed #dcfddc;
-}
-.navi li#n5 a:hover ,
-.navi li#n5 a.now{
-  background-color: rgba(15, 195, 15, 1);
-  transition: all 0.5s ease;
-}
-
-/*navi n6*/
-.navi li#n6 a:link,
-.navi li#n6 a:visited,
-li#n6 a:link{
-  background-color: rgba(255, 136, 0, 0.5);
-    box-shadow: 0 0 3px 3px #f80;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #ffead1;
-    border-bottom: 2px dashed #ffead1;
-}
-.navi li#n6 a:hover ,
-.navi li#n6 a.now{
-  background-color: rgba(255, 136, 0, 1);
-  transition: all 0.5s ease;
-}
-
-/*navi n7*/
-.navi li#n7 a:link,
-.navi li#n7 a:visited,
-li#n7 a:link{
-  background-color: rgba(0, 0, 255, 0.5);
-    box-shadow: 0 0 3px 3px #00c;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #b2b2ff;
-    border-bottom: 2px dashed #b2b2ff;
-}
-.navi li#n7 a:hover ,
-.navi li#n7 a.now{
-  background-color: rgba(0, 0, 240, 1);
-  transition: all 0.5s ease;
-}
-
-/*navi n8*/
-.navi li#n8 a:link,
-.navi li#n8 a:visited,
-li#n8 a:link{
-  background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 3px 3px #999;
-  transition: all 0.5s ease;
-    border-top: 2px dashed #eee;
-    border-bottom: 2px dashed #eee;
-}
-.navi li#n8 a:hover ,
-.navi li#n8 a.now{
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: all 0.5s ease;
-}
-
-
-
 
 .wrapper {
   width: 100%;
@@ -262,7 +149,7 @@ li#n8 a:link{
 
 #con{
   overflow: hidden;
-  width: 100%;
+  width: 75%;
 }
 
 
@@ -358,6 +245,53 @@ li#n8 a:link{
   font-size: 0.8rem;
   text-indent: 0;
 }
+
+
+.sidebar {
+  float: right;
+  line-height: 2;
+  font-size: 0.7rem;
+  /*  border: 1px solid #edd;*/
+  width: 200px;
+/*  height: 100%;*/
+  /*  padding: 9px;*/
+  padding: 0.5rem;
+  margin: 0 1rem 1rem 0;
+/*  padding-bottom: 2000px;*/
+/*  margin-bottom: -2000px;*/
+/*  height: auto;*/
+/*  background-color: rgb(0, 0, 255);*/
+/*  background-color: rgba(0, 0, 255, 0.3);*/
+}
+.sidebar hr{
+  border: dotted 1px #333;
+}
+
+.sidebar dt a{
+  display: block;
+  padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+  margin: 0.5rem 0;
+  color: #fff;
+  text-align: center;
+  background-color: #00f;
+  border-radius: 20px/20px;
+    border-top: 2px dashed #ddf;
+    border-bottom: 2px dashed #ddf;
+    box-shadow: 0 0 2px 2px #00f;
+}
+.sidebar dt a:hover{
+  color: #00f;
+  background-color: #ccf;
+    box-shadow: 0 0 2px 2px #99f;
+  transition: all 0.5s ease;
+}
+.sidebar dd{
+  font-size: 0.8rem;
+  padding-left: 1rem;
+}
+
+
+
 
 
 /**/
@@ -470,40 +404,23 @@ ul.fl li{
 .img_left,
 /*.profile,*/
 .text_right{
-/*  float: left;*/
+  float: left;
 }
 .text_right{
 /*  overflow: hidden;*/
 }
 
-#p_back{
+#plefile_back{
   width: 9rem;
   padding: 0.3rem 0.5rem;
   margin: 0.5rem;
   text-align: center;
   font-size: 1.4rem;
-  background-color: rgba(0, 177, 255, 0.5);
-    box-shadow: 0 0 3px 3px #0bf;
-    border-top: 2px dashed #2ef;
-    border-bottom: 2px dashed #2ef;
+  background-color: rgba(18, 177, 73, 0.38);
+/*  background-image: url("../images/profile_back.jpg");*/
   border-radius: 10px;
-  color: #fff;
+  color: #0b8888;
     text-shadow: 1px 1px 3px #fff;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-}
-#p_back2{
-  width: 9rem;
-  padding: 0.3rem 0.5rem;
-  margin: 0.5rem;
-  text-align: center;
-  font-size: 1.4rem;
-  background-color: rgba(255, 255, 0, 0.3);
-    box-shadow: 0 0 3px 3px #ff9;
-    border-top: 2px dashed #ff6;
-    border-bottom: 2px dashed #ff6;
-  border-radius: 10px;
-  color: #666;
-    text-shadow: 1px 1px 3px #ccc;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 .profile{
@@ -514,51 +431,6 @@ ul.fl li{
   margin: 0.5rem;
   border: 1px solid #ccc;
     box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-}
-#pr p{
-/*  display: block;*/
-  float: right;
-  width: 35%;
-/*  height: auto;*/
-  background-color: rgba(0, 245, 255, 0.35);
-  margin:1rem 4rem 0 0;
-  padding: 0.5rem;
-}
-
-#wk1{
-  padding: 1rem;
-}
-.works{
-/*  width: 200px;*/
-  height: 160px;
-}
-
-
-
-
-
-
-
-
-/*@media (max-width: 640px) {*/
-@media (max-width: 1000px) {
-  #p_back{
-    font-size: 1rem;
-    padding: 0.3rem;
-  }
-  #p_con{
-/*    padding: 1rem;*/
-  }
-  .profile{
-    float: none;
-    width: 60%;
-  }
-  #pr p{
-    padding: 0.5rem;
-    width: 100%;
-    float: none;
-  }
-  
 }
 
 
@@ -593,6 +465,7 @@ h2,p,img,div{
 @media (max-width: 1000px) {
   .wrapper,
   .content,
+  .sidebar,
   body{
     float: none;
     width: 100%;
@@ -610,7 +483,12 @@ h2,p,img,div{
     right: 0.5rem;
     top: 0.5rem;
   }
-    
+  
+  .navi{
+    width: 100%;
+    margin: auto;
+  }
+  
   .navi li a{
 /*    display: block;*/
     width: 50px;
@@ -620,9 +498,6 @@ h2,p,img,div{
     margin: 0.3rem 0.1rem;
     padding: 0.3rem;
     font-size: 0.6rem;
-  }
-  .navi il#n3{
-    margin:1rem;
   }
   
   .images{
@@ -647,7 +522,23 @@ h2,p,img,div{
   /*  text-indent: 0.5rem;*/
     padding-left: 1.5rem;
   }
-
+  
+  .sidebar{
+    margin:0;
+    padding: 0;
+  }
+  
+  .sidebar dt a{
+    padding: 0.2rem;
+  }
+  .sidebar dt a,
+  .sidebar dd{
+    width: 50%;
+    margin: 0.5rem auto;
+  }
+  .sidebar hr{
+    border: 1px dotted #99f;
+  }
   .content {
     padding: 0;
   }
@@ -671,11 +562,7 @@ h2,p,img,div{
   
 }
 
-/*span*/
-.ki{
-  color:#000;
-  background-color: #ff0;
-  padding: 0.1rem;
-}
+
+
 
 

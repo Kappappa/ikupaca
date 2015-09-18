@@ -135,8 +135,16 @@ function introR(int){
 <!--サイトマップ-->
     <div class="navi">
      <ul>
-      <li class="now"><a href="">サイト紹介</a></li>
-      <li><a href="../index.php">Home</a></li>
+      <li id="n2"><a href="../index.php">Home</a></li>
+      <li id="n3"><a href="../profile.php">Profile</a></li>
+      <li id="n4"><a href="../works.php">作品紹介</a></li>
+      <li id="n5"><a class="now" href="">サイト紹介</a></li>
+      <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
+      <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
+      <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
+      <li id="n8"><a href="../contact.php">お問合わせ</a></li>
+<!--      <li><a href="">チームikupaca</a></li>-->
+<!--      <li><a href="">Access</a></li>-->
     </ul>
     </div>
     <hr>

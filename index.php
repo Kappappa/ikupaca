@@ -39,11 +39,11 @@ if (isset($_GET['id'])) {
 <head>
   <meta charset="utf-8">
   <title>ikupaca</title>
-<!--  <meta name="keywords" content="ikupaca">-->
-<!--  <meta name="description" content="ikupacaワールドへようこそ。京都宇治を拠点に活動中。カラフルを大切にbabyからご長寿まで愛されるような作品を日々ハンドメイドしております。合言葉はクレイジーゴナクレイジー！"> -->
+  <meta name="keywords" content="ikupaca">
+  <meta name="description" content="ikupacaワールドへようこそ。京都宇治を拠点に活動中。カラフルを大切にbabyからご長寿まで愛されるような作品を日々ハンドメイドしております。合言葉はクレイジーゴナクレイジー！"> 
   
 <!--  検索させない！-->
-  <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<!--  <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">-->
   
   <link rel="shortcut icon" href="./images/faviconB.ico">
   <link rel="apple-touch-icon-precomposed" href="http://nekomemo.chobi.net/_ikupaca/images/ikupaca_logo.jpg">
@@ -72,14 +72,14 @@ if (isset($_GET['id'])) {
 <!--サイトマップ-->
     <div class="navi">
      <ul>
-      <li class="now"><a href="">Home</a></li>
-      <li><a href="./profile.php">Profile</a></li>
-      <li><a href="">作品紹介</a></li>
-      <li><a href="./intro/index.php">サイト紹介</a></li>
-      <li><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
-      <li><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
-      <li><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
-      <li><a href="./contact.php">お問い合わせ</a></li>
+      <li id="n2"><a class="now" href="">Home</a></li>
+      <li id="n3"><a href="./profile.php">Profile</a></li>
+      <li id="n4"><a href="./works.php">作品紹介</a></li>
+      <li id="n5"><a href="./intro/index.php">サイト紹介</a></li>
+      <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
+      <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
+      <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
+      <li id="n8"><a href="./contact.php">お問合わせ</a></li>
 <!--      <li><a href="">チームikupaca</a></li>-->
 <!--      <li><a href="">Access</a></li>-->
     </ul>
@@ -113,6 +113,7 @@ if (isset($_GET['id'])) {
       </div>
       <!--images-->
 
+<!--
     <div class="sidebar">
       <dl>
           <dt><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">【ブログはこちら】</a></dt>
@@ -130,10 +131,9 @@ if (isset($_GET['id'])) {
           <dt><a href="./contact.php">【お問い合わせ】</a></dt>
           <dd></dd>
           <hr>
-          <dt><a href="./admin/index.php">今だけ管理画面</a></dt>
-          <dd></dd>
       </dl>
     </div>
+-->
     <!-- div class="sidebar" -->
 
       
