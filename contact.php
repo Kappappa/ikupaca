@@ -100,11 +100,11 @@ table.formTable th{
         <td><input size="20" type="text" name="お名前" /> <br>※必須</td>
       </tr>
       <tr>
-        <th>電話番号<br>（半角）</th>
+        <th>電話番号<br>(半角)</th>
         <td><input size="30" type="text" name="電話番号" /></td>
       </tr>
       <tr>
-        <th>Mailbr<br>（半角）</th>
+        <th>Mail<br>(半角)</th>
         <td><input size="30" type="text" name="Email" /><br> ※必須</td>
       </tr>
       <tr>
@@ -112,11 +112,13 @@ table.formTable th{
         <td><input type="radio" id="m" name="性別" value="男" /> <label for="m">男</label>　
           <input type="radio" id="f" name="性別" value="女" /> <label for="f">女</label> </td>
       </tr>
+<!--
       <tr>
         <th>サイトを知った<br>きっかけ</th>
         <td><input name="サイトを知ったきっかけ[]" id="fr" type="checkbox" value="友人・知人" /> <label for="fr">友人・知人</label>　
           <input name="サイトを知ったきっかけ[]" id="en" type="checkbox" value="検索エンジン" /> <label for="en">検索エンジン</label></td>
       </tr>
+-->
       <tr>
         <th>お問い合わせ内容<br /></th>
         <td><textarea name="お問い合わせ内容" cols="50" rows="5"></textarea><br>※必須</td>

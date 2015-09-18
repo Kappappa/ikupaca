@@ -7,6 +7,10 @@
   box-shadow: 1px 1px 1px red;
 */
 }
+html{
+  background-color: rgba(255, 238, 180, 0.75);
+  background-color: rgb(255, 254, 241);
+}
 body {
   font-family: "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Noto Sans Japanese Regular", sans-serif;
 /*  font-family: 'Sigmar One', cursive;*/
@@ -37,7 +41,9 @@ hr{
 
 header {
   /*  border: 1px solid #edd;*/
-  background-color: rgb(255, 255, 255);
+/*  background-color: rgb(255, 255, 255);*/
+/*  background-color: rgba(255, 238, 180, 0.75);*/
+  background-color: rgb(255, 254, 241);
   width: 100%;
 /*  background-color: rgba(255, 0, 0, 0.3);*/
 /*
@@ -46,6 +52,10 @@ header {
   background-size: cover;
 */
   padding: 0.5rem 0 0;
+}
+.header{
+    text-shadow: 1px 1px 3px #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 header img{
   height: 80px;
@@ -287,6 +297,9 @@ li.now a:visited{
 /**/
 /*footer*/
 
+.footer{
+  overflow: hidden;
+}
 .footer a{
   clear: both;
   display: block;
@@ -360,7 +373,7 @@ li.now a:visited{
 .intro dd.bl{
   padding: 0.3rem;
   font-size: 1.1rem;
-  color: #66f;
+  color: #fa0;
   line-height: 1.5;
 }
 .intro .intro_app,
@@ -381,6 +394,51 @@ ul.fl li{
   display: block;
   float: left;
 }
+
+
+
+#p_con{
+  width: 100%;
+  clear: both;
+}
+.img_left,
+/*.profile,*/
+.text_right{
+  float: left;
+}
+.text_right{
+/*  overflow: hidden;*/
+}
+
+#plefile_back{
+  width: 9rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(18, 177, 73, 0.38);
+/*  background-image: url("../images/profile_back.jpg");*/
+  border-radius: 10px;
+  color: #0b8888;
+    text-shadow: 1px 1px 3px #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.profile{
+/*  display: block;*/
+  width: 50%;
+  float: left;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+
+/*test*/
+h2,p,img,div{
+/*  border:1px dotted #00f;*/
+}
+
 
 /*
 .intro .intro_app{

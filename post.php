@@ -36,8 +36,8 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 $site_top = "./index.php";
 
 // 管理者メールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
-//$to = "ikupaca@gmail.com";
-$to = "hayashida.akademeia@gmail.com";
+$to = "ikupaca@gmail.com";
+//$to = "hayashida.akademeia@gmail.com";
 
 //フォームのメールアドレス入力箇所のname属性の値（name="○○"　の○○部分）
 $Email = "Email";

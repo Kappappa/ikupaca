@@ -52,15 +52,6 @@ if (isset($_GET['id'])) {
   <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <script type="text/javascript" src="./js/jquery.js"></script>
-  <script src="js/jquery.bxslider.min.js"></script>
-<!--  <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>-->
-  <script type="text/javascript">
-        $(document).ready(function(){
-            $('.bxslider').bxSlider({
-                auto: true,
-            });
-        });
-</script>
   
 </head>
 
@@ -72,10 +63,10 @@ if (isset($_GET['id'])) {
 <!--サイトマップ-->
     <div class="navi">
      <ul>
-      <li class="now"><a href="">Home</a></li>
+      <li><a href="./index.php">Home</a></li>
       <li><a href="">作品紹介</a></li>
       <li><a href="">チームikupaca</a></li>
-      <li><a href="">Profile</a></li>
+      <li class="now"><a href="">Profile</a></li>
       <li><a href="">Access</a></li>
     </ul>
     </div>
@@ -86,65 +77,14 @@ if (isset($_GET['id'])) {
 
   <div class="wrapper">
     <div class="content">
-     
-      <div class="images">  
-        <ul class="bxslider">
-          <li><img src="./images/p1.jpg" title="1" alt="写真1"></li>
-          <li><img src="./images/p2.jpg" title="2" alt="写真2"></li>
-          <li><img src="./images/p3.jpg" title="3" alt="写真3"></li>
-          <li><img src="./images/p4.jpg" title="4" alt="写真4"></li>
-        </ul>
-        <!--slide show-->
-      </div>
-      <!--images-->
+      <div id="p_con">
 
-    <div class="sidebar">
-      <dl>
-          <dt><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">【ブログはこちら】</a></dt>
-          <dd>いくぱかの手芸な毎日<br>クレイジーゴナクレイジー</dd>
-          <hr>
-          <dt><a href="https://www.facebook.com/ikupaca" target="_blank">【facebookはこちら】</a></dt>
-          <dd></dd>
-          <hr>
-          <dt><a href="https://instagram.com/IKUPACA/" target="_blank">【Instagram】</a></dt>
-          <dd></dd>
-          <hr>
-          <dt><a href="./intro/index.php">※ サイト紹介 ※</a></dt>
-          <dd></dd>
-          <hr>
-          <dt><a href="./contact.php">【お問い合わせ】</a></dt>
-          <dd></dd>
-          <hr>
-          <dt><a href="./admin/index.php">今だけ管理画面</a></dt>
-          <dd></dd>
-      </dl>
-    </div>
-    <!-- div class="sidebar" -->
-
-      
-      <div id="con">
+        <h2 id="plefile_back">Profile</h2>
+        <p class="img_left"><img class="profile" src="./images/profile.jpg" alt="profile"></p>
+        <p class="text_right">京都宇治を拠点に活動しています。<br>二児の母。<br>カラフルを大切にベビーからご長寿まで愛されるようなものを日々ハンドメイドしています。<br>合言葉はクレイジーゴナクレイジー。<br>夢中になるとまらないという意味です。<br>そんなikupacaワールドを皆さんと体感し合いたいです。<br>不思議なアイテム、取り揃えております。</p>
        
-        <div id="news">
-          <h2>[ 新着情報 ]</h2>
-<?php
-// newsデータチェック
-  $DB -> news(3);
-?>
-        </div>
-        <!--news-->
-
-        <div id="tweets">
-          <h2>[ つぶやき ]</h2>
-<?php
-// tweetデータチェック
-  $DB -> tw(2);
-?>
-        </div>
-        <!--tweets-->
-        
       </div>
-      <!--con-->
-      
+<!--   div class="p_con"-->
     </div>
     <!-- div class="content" -->
 

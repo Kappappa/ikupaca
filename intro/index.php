@@ -336,6 +336,7 @@ maping(id,name,ad,tel);
 <script type="text/javascript">
 $(document).ready(function() {
   var pagetop = $('.pagetop');
+  pagetop.hide();
     $(window).scroll(function () {
        if ($(this).scrollTop() > 400) {
             pagetop.fadeIn();
