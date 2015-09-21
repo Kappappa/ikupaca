@@ -102,9 +102,9 @@ EOS;
 /* ----------------------------------------------
  *		paging::ページング
  ----------------------------------------------*/
-public function paging($page)
+public function paging($page,$table)
 {
-  if($page==""){
+  if($page=="" || $table==""){
     return NULL;
   }
   $page= intval($page);
@@ -112,7 +112,7 @@ public function paging($page)
   $pdo = pdoSESSION();
   
   //新着情報追加
-  $sql = "SELECT COUNT(*) AS n FROM News";
+  $sql = "SELECT COUNT(*) AS n FROM ".$table.";";
   $res = $pdo -> query($sql);
   $row= $res -> fetch(PDO::FETCH_ASSOC);
   return ceil($row["n"]/$page);
@@ -241,7 +241,7 @@ public function newsUpdate($id, $time, $title, $news)
 
 
 /* ----------------------------------------------
- *		news_UPDATE::新着情報更新
+ *		news_DELETE::新着情報削除
  ----------------------------------------------*/
 public function newsDelete($editDelete)
 {
@@ -358,8 +358,125 @@ public function imageId($timeCheck)
   }
 }
 
+/* ----------------------------------------------
+ *		twEdit::つぶやき表示
+ ----------------------------------------------*/
+public function twEdit($edit,$table_name,$self)
+{
+  if($edit=="" || $table_name=="" || $self=""){
+    return NULL;
+  }
+  $edit=intval($edit);
+  // PDO接続
+  $pdo = pdoSESSION();
+
+  $sql_Edit= sprintf('SELECT * FROM %s WHERE id = %d order by time desc;',$table_name,$edit);
+  $res_Edit=  $pdo -> query($sql_Edit);
+  $row= $res_Edit -> fetch(PDO::FETCH_ASSOC);
+    $edit_id = $row["id"];
+    $edit_time = $row["time"];
+    $edit_title = $row["title"]; 
+    $edit_text = $row["text"]; 
+  //   ヒアドキュメントで表示
+echo <<<EOS
+        <form action="$self" method="post">
+        <dl>
+          <dd class=""><input type="text" name="time" id="time" value="$edit_time"></dd>
+          <dd class=""><input type="text" name="title" id="title" value="$edit_title"></dd>
+          <dd class=""><textarea rows="10" name="text" id="textAdmin">$edit_text</textarea></dd>
+        </dl>
+          <p><input type="hidden" name="edit" id="edit" value="$edit_id"></p>
+          <p><input type="submit" value="確認"></p>
+        </form>
+        <form action="$self" method="post">
+          <p><input class="redButton" type="submit" value="削除"></p>
+          <p><input type="hidden" name="editDelete" id="editDelete" value="$edit_id"></p>
+        </form>
+
+EOS;
+}
 
 
+
+/* ----------------------------------------------
+ *		edit_UPDATE::新着情報更新
+ ----------------------------------------------*/
+public function editUpdate($id, $time, $title,$text,$table_name)
+{
+  if($id=="" || $time=="" || $title =="" || $text=="" || $table_name==""){
+    return NULL;
+  }
+  // PDO接続
+  $pdo = pdoSESSION();
+  //情報更新
+  $sql = $pdo -> prepare("UPDATE " .$table_name. " SET time= :time , title= :title , text= :text WHERE id= :id ;");
+//  $sql = $pdo -> prepare("UPDATE tw SET time= :time , title= :title , text= :text WHERE id= :id ;");
+  $sql-> bindParam(':id', $id, PDO::PARAM_STR);
+  $sql-> bindParam(':time', $time, PDO::PARAM_STR);
+  $sql->bindParam(':title', $title, PDO::PARAM_STR);
+  $sql->bindParam(':text', $text, PDO::PARAM_STR);
+//  $sql->bindParam(':table', $table_name, PDO::PARAM_STR);
+
+  $sql->execute(); 
+  return NULL;
+}
+
+
+/* ----------------------------------------------
+ *		edit_DELETE::新着情報削除
+ ----------------------------------------------*/
+public function editDelete($editDelete,$table_name)
+{
+if($editDelete==""){
+    return NULL;
+  }
+  $editDelete=intval($editDelete);
+  // PDO接続
+  $pdo = pdoSESSION();
+  
+//  DELETE FROM News WHERE news_id = 5;
+  $sql_editDelete=sprintf("DELETE FROM %s WHERE id= %d ;",$table_name,$editDelete);
+  $pdo -> query($sql_editDelete);
+//  print "OK";
+  return NULL;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 

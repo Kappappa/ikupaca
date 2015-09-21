@@ -28,7 +28,7 @@ if(empty($_GET["p"]) || $_GET["p"]<=0){
 	$p=intval($_GET["p"]);
 }
 //	最終ページを求める(表示件数)
-$lastPage= $DB -> paging(DATA_PER_PAGE, "News");
+$lastPage= $DB -> paging(DATA_PER_PAGE, "tw");
 if($p>$lastPage) $p=$lastPage;
 
 // $flag( 1:一覧表示 2:編集画面 3:編集チェック画面 4:編集送信完了通知画面 5:削除)
@@ -56,32 +56,39 @@ if($edit != "")
 
 
 // 編集データチェック(初期化)
+
+$self= $_SERVER['PHP_SELF']; // このファイル名
+$table_name= 'tw'; // 使用テーブル名を指定
+
 $id= (!empty($_POST["edit"])) ? $m->h($_POST["edit"]) : "";
-$time= (!empty($_POST["news_create_time"])) ? $m->h($_POST["news_create_time"]) : "";
-$title= (!empty($_POST["news_title"])) ? $m->h($_POST["news_title"]) : "";
-$news= (!empty($_POST["news"])) ? $m->h($_POST["news"]) : "";
+
+$time= (!empty($_POST["time"])) ? $m->h($_POST["time"]) : "";
+$title= (!empty($_POST["title"])) ? $m->h($_POST["title"]) : "";
+$text= (!empty($_POST["text"])) ? $m->h($_POST["text"]) : "";
+
 $editIdCheck= (!empty($_POST["editId"])) ? $m->h($_POST["editId"]) : "";
 $timeCheck= (!empty($_POST["timeCheck"])) ? $m->h($_POST["timeCheck"]) : "";
 $titleCheck= (!empty($_POST["titleCheck"])) ? $m->h($_POST["titleCheck"]) : "";
-$newsCheck= (!empty($_POST["newsCheck"])) ? $m->h($_POST["newsCheck"]) : "";
+$textCheck= (!empty($_POST["textCheck"])) ? $m->h($_POST["textCheck"]) : "";
+
 $editDelete= (!empty($_POST["editDelete"])) ? $m->h($_POST["editDelete"]) : "";
 $_SESSION["editId"]= "";
 
-if(!empty($id) && !empty($time) && !empty($title) && !empty($news)){
+if(!empty($id) && !empty($time) && !empty($title) && !empty($text)){
   $flag=3;
   $_SESSION["editId"]= $id;
 }
 
 // データ上書き
-if(!empty($editIdCheck) && !empty($timeCheck) && !empty($titleCheck) && !empty($newsCheck)){
+if(!empty($editIdCheck) && !empty($timeCheck) && !empty($titleCheck) && !empty($textCheck)){
   $flag=4;
-  $DB -> newsUpdate($editIdCheck, $timeCheck, $titleCheck, $newsCheck);
+  $DB -> editUpdate($editIdCheck, $timeCheck, $titleCheck, $textCheck,$table_name);
 }
 
 // データ削除
 if(!empty($editDelete)){
   $flag=5;
-  $DB -> newsDelete($editDelete);
+  $DB -> editDelete($editDelete,$table_name);
 }
 
 
@@ -119,9 +126,9 @@ if(!empty($editDelete)){
      <ul>
       <li><a href="./index.php">ログオフ</a></li>
       <li><a href="./news.php">新着情報追加</a></li>
-      <li class="now"><a href="">新着情報編集</a></li>
+      <li><a href="./newsEdit.php">新着情報編集</a></li>
       <li><a href="./twadd.php">つぶやき追加</a></li>
-      <li><a href="./twEdit.php">つぶやき編集</a></li>
+      <li class="now"><a href="./twEdit.php">つぶやき編集</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
     </ul>
@@ -138,10 +145,10 @@ if(!empty($editDelete)){
 if($flag==1){
 ?>
 <main>
-  <h2>【新着情報編集】</h2>
+  <h2>【つぶやき編集】</h2>
 
   <p style="text-align:right;">
-		<a href="newsEdit.php?p=<?php echo $p-1 ?>">前のページ</a> | <a href="newsEdit.php?p=<?php echo $p+1 ?>">次のページ</a>
+		<a href="twEdit.php?p=<?php echo $p-1 ?>">前のページ</a> | <a href="twEdit.php?p=<?php echo $p+1 ?>">次のページ</a>
 	</p>
   <div id="newsAdmin">
 <?php
@@ -150,21 +157,21 @@ if($flag==1){
 
   //新着情報取得(3件)
   $page=($p-1)*DATA_PER_PAGE;
-  $sql_news= sprintf('SELECT * FROM News order by news_create_time desc LIMIT %d, %d ;',$page,DATA_PER_PAGE);
-  $res_news=  $pdo -> query($sql_news);
-  while($row= $res_news -> fetch(PDO::FETCH_ASSOC)) {
-    $news_id = $row["news_id"];
-    $news_create_time = $row["news_create_time"];
-    $news_title = $row["news_title"]; 
-    $news_text = nl2br($row["news_text"]); 
+  $sql= sprintf('SELECT * FROM tw order by time desc LIMIT %d, %d ;',$page,DATA_PER_PAGE);
+  $res=  $pdo -> query($sql);
+  while($row= $res -> fetch(PDO::FETCH_ASSOC)) {
+    $sql_id = $row["id"];
+    $sql_time = $row["time"];
+    $sql_title = $row["title"]; 
+    $sql_text = nl2br($row["text"]); 
 //   ヒアドキュメントで表示
 echo <<<EOS
-        <hr class="newsHr">
-        <p class="newsAdminTime">$news_create_time</p>
-        <p class="newsAdminTitle">[$news_title]</p>
-        <p class="newsAdminText">$news_text</p>
+        <hr class="">
+        <p class="newsAdminTime">$sql_time</p>
+        <p class="newsAdminTitle">[$sql_title]</p>
+        <p class="newsAdminText">$sql_text</p>
         <form action="" method="get">
-          <input type="hidden" name="edit" id="edit" value="$news_id">
+          <input type="hidden" name="edit" id="edit" value="$sql_id">
           <input type="submit" value="編集">
         </form>
 
@@ -179,11 +186,11 @@ EOS;
 }elseif($flag==2){
 ?>
 <main id="">
-  <h2>【新着情報編集】</h2>
+  <h2>【つぶやき編集】</h2>
   <div id="newsAdmin">
-  <p><input class="redButton" type="button" onclick="location.href='./newsEdit.php'" value="戻る"></p>
+  <p><input class="redButton" type="button" onclick="location.href='./twEdit.php'" value="戻る"></p>
 <?php
-$DB -> newsEdit($edit);
+$DB -> twEdit($edit,$table_name,$self);
 ?>
   </div>
 <?php
@@ -194,24 +201,24 @@ $DB -> newsEdit($edit);
 ?>
 
 <main id="">
-  <h2>【新着情報編集】</h2>
+  <h2>【つぶやき編集】</h2>
   <div id="newsAdmin">
-  <p><input class="redButton" type="button" onclick="location.href='./newsEdit.php?edit=<?php echo $id; ?>'" value="戻る"></p>
-  <form action="./newsEdit.php" method="post">
+  <p><input class="redButton" type="button" onclick="location.href='./twEdit.php?edit=<?php echo $id; ?>'" value="戻る"></p>
+  <form action="./twEdit.php" method="post">
     <dl>
      <dt>投稿時間</dt>
      <dd><?php echo $time; ?></dd>
       <dt>【タイトル】</dt>
       <dd><?php echo $title; ?></dd>
       <dt>【内容】</dt>
-      <dd><?php echo nl2br($news); ?></dd>
+      <dd><?php echo nl2br($text); ?></dd>
     </dl>
     <p><input type="submit" value="更新"></p>
      <dl>
       <dd><input type="hidden" id="editId" name="editId" value="<?php echo $_SESSION["editId"]; ?>"></dd>
       <dd><input type="hidden" id="timeCheck" name="timeCheck" value="<?php echo $time; ?>"></dd>
       <dd><input type="hidden" id="titleCheck" name="titleCheck" value="<?php echo $title; ?>"></dd>
-      <dd><input type="hidden" name="newsCheck" id="newsCheck" value="<?php echo $news; ?>"></dd>
+      <dd><input type="hidden" name="textCheck" id="textCheck" value="<?php echo $text; ?>"></dd>
     </dl>
   </form>
   </div>
@@ -221,10 +228,10 @@ $DB -> newsEdit($edit);
 }elseif($flag==4){
 ?>
 <main id="heightAdmin">
-  <h2>【新着情報編集】</h2>
+  <h2>【つぶやき編集】</h2>
   <div id="newsAdmin">
   <p>編集が完了しました。</p>
-  <p><input class="redButton" type="button" onclick="location.href='./newsEdit.php'" value="戻る"></p>
+  <p><input class="redButton" type="button" onclick="location.href='./twEdit.php'" value="戻る"></p>
   </div>
 <?php
 
@@ -232,10 +239,10 @@ $DB -> newsEdit($edit);
 }elseif($flag==5){
 ?>
 <main id="heightAdmin">
-  <h2>【新着情報編集】</h2>
+  <h2>【つぶやき編集】</h2>
   <div id="newsAdmin">
   <p>削除しました。</p>
-  <p><input class="redButton" type="button" onclick="location.href='./newsEdit.php'" value="戻る"></p>
+  <p><input class="redButton" type="button" onclick="location.href='./twEdit.php'" value="戻る"></p>
   </div>
 <?php
 }else{
