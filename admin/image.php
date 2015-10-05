@@ -109,6 +109,15 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error'])) {
         }
 }
 
+
+// 画像投稿チェック
+/* アップロードがあったとき */
+if (isset($_FILES['topfile']['error']) && is_int($_FILES['topfile']['error'])) {
+  $table= 'topImage';
+  $file= $_FILES['topfile'];
+  $flag= $DB -> topImageInsert($table,$file);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -144,6 +153,7 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error'])) {
       <li><a href="./twEdit.php">つぶやき編集</a></li>
       <li class="now"><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
+      <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
     </ul>
     </div>
     <hr>
@@ -156,11 +166,19 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error'])) {
 if($flag==1){
 ?>
 <main id="heightAdmin">
-  <h2>【画像追加】</h2>
+  <h2>【一般画像追加】</h2>
   <form enctype="multipart/form-data" action="" method="post">
     <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="upfile"></p><br>
     <p><input type="submit" value="送信"></p>
   </form>
+<hr>
+  <h2>【トップ画像追加】</h2>
+  <p><input class="blueButton" type="button" onclick="location.href='./imageTop.php'" value="トップ画像一覧"></p>
+  <form enctype="multipart/form-data" action="" method="post">
+    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="topfile"></p><br>
+    <p><input type="submit" value="送信"></p>
+  </form>
+  
 <?php
 }elseif($flag==2){
 ?>

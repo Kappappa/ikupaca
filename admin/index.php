@@ -4,6 +4,14 @@ ini_set( 'display_errors', 1);
 
 // PDO接続
 include_once("../inc/config.php");
+
+//// DB操作
+//include_once("../inc/pdoClass.php");
+//$DB = new DB();
+////create_image_table
+//$table='topImage';
+//$DB->create_image_table($table);
+
 // Class
 include_once("../inc/MHClass.php");
   $m = new MHClass;
@@ -45,6 +53,9 @@ if(!empty($_POST["pass"]))
 $adminidCookie= (!empty($_COOKIE["adminid"])) ? $_COOKIE["adminid"] :"";
 $passCookie= (!empty($_COOKIE["pass"])) ? $_COOKIE["pass"] :"";
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -80,6 +91,7 @@ $passCookie= (!empty($_COOKIE["pass"])) ? $_COOKIE["pass"] :"";
       <li><a href="./twEdit.php">つぶやき編集</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
+      <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
 <!--      <li><a href="../inc/pdo/create_table.php">新着情報DB作成</a></li>-->
 <!--      <li><a href="../inc/pdo/delete_table.php">新着情報DB削除</a></li>-->
 <!--      <li><a href="../inc/pdo/create_image_table.php">imageDB作成</a></li>-->

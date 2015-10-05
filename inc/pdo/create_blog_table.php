@@ -2,7 +2,7 @@
 // 設定(パス要確認)
 include_once("../config.php");
 
-$sql_image= 'CREATE TABLE image (
+$sql_image= 'CREATE TABLE IF NOT EXISTS image (
 id int(10) unsigned NOT NULL COMMENT "ID",
 name varchar(255) NOT NULL COMMENT "ファイル名",
 type tinyint(2) NOT NULL COMMENT "IMAGETYPE定数",
