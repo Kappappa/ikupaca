@@ -5,69 +5,12 @@
  ------------------------------------------------ */
 
 // サイト使用量
-
-　　2015-09-26_22:50
-　　29.4 MB / 100MB
-
-　　2015-09-22_07:22
-　　30.4 MB / 100MB
-
-//--------------------------
-/* 　　　ToDo　　 　*/
-//--------------------------
-
-・サイト紹介を登録制
+　　2015-09-18_09:26
+　　21.9MB / 100MB
 
 //--------------------------
 /* 　　　進捗　　 　*/
 //--------------------------
-
-2015-09-26
-　・画像登録ページにトップ画像登録追加
-　　:: ./admin/imageTop.php
-　　-> 登録切り替え
-　　-> 削除も可能
-　・TOPスクリーンに反映
-
-2015-09-23
-　・TOPスクリーン画像登録
- 　　:: 登録用のデータベース作成
-　　-> pdoClass.phpに付与
-　　-> flagを設けることにより表示・非表示を考慮
-<!--
-file用 form
-<form enctype="multipart/form-data" action="" method="post">
-  <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="upfile"></p><br>
-  <p><input type="hidden" name="imageid" value="<?php echo $_SESSION["imageid"] ?>"></p>
-  <p><input type="submit" value="送信"></p><br>
-  <p><input class="redButton" type="button" onclick="location.href='./tw.php'" value="戻る"></p>
-</form>
-
-/* アップロードがあったとき */
-if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error']) && !empty($imageid)) {
-  $file=$_FILES['upfile'];
-  $table= "topImage";
-  $insertImage=$DB -> topImageInsert($table , $file);
-  if($insertImage){$flag=4;}
-}
--->
-2015-09-22
-　・つぶやき追加 :: バグ修正
-　　-> 追加後に戻れない
-　　-> headerファイル名変更
-　・つぶやき編集
-　　:: 画像編集実装
-　　-> 変更及び削除、追加を実装
-
-2015-09-21
-　・つぶやき編集
-　　:: 画像表示・画像編集ボタン
-　　-> 画像編集は未実装
-　　-> 画像追加ボタンも追加が必要…だぁ…
-
-2015-09-20
-　・つぶやき編集
-　　:: 時間・タイトル・本文のみ変更可能
 
 2015-09-18
 　・トップページ変更

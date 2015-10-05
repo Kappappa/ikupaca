@@ -96,7 +96,6 @@ if($_SESSION["id"]==ADMIN && $_SESSION["pass"]==PASS){
       <li><a href="./twEdit.php">つぶやき編集</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li class="now"><a href="./imageAll.php">画像一覧</a></li>
-      <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
     </ul>
     </div>
     <hr>
