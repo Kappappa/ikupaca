@@ -105,7 +105,7 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error']) && !
         $output($dst);
         imagedestroy($src);
         imagedestroy($dst);
- 
+
 // Transaction
         try {
           $pdo->beginTransaction();
@@ -173,6 +173,7 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error']) && !
       <li><a href="./twEdit.php">つぶやき編集</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
+      <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
     </ul>
     </div>
     <hr>
@@ -241,14 +242,14 @@ if($flag==1){
 <main id="heightAdmin">
   <h2>【つぶやき】</h2>
   <p>画像を送信しました。</p><br>
-  <p><input class="redButton" type="button" onclick="location.href='./tw.php'" value="戻る"></p>
+  <p><input class="redButton" type="button" onclick="location.href='./twadd.php'" value="戻る"></p>
   
 <?php
 }else{
 ?>
 <main id="heightAdmin">
   <h2>【Error】</h2>
-  <p><input class="redButton" type="button" onclick="location.href='./tw.php'" value="戻る"></p>
+  <p><input class="redButton" type="button" onclick="location.href='./twadd.php'" value="戻る"></p>
 
 <?php
 }
