@@ -1,28 +1,27 @@
-# ikupaca
-----
-ikupaca  
+# ikupaca  
+----  
+ikupaca    
 author: Kappappa  
 Date: 2015/08/24  
- ----
-    適当に
-    ゆるく
-    のんびり
-ゆったり開発中…
-<<<<<<< HEAD
+----  
+    適当に  
+    ゆるく  
+    のんびり  
+ゆったり開発中…  
 
-サイト使用量
-> 2015-09-18_09:26
-> 21.9MB / 100MB
+サイト使用量  
+> 2015-09-18_09:26  
+> 21.9MB / 100MB  
+---  
 
 
+## 進捗　　
 
-## 進捗　　 　
+### 2015-10-18  
+この１ヶ月ほど進捗状況更新出来てないが…  
+トップ画像の登録(複数OK)と画像のON/OFF切り替え及び削除機能追加  
 
-### 2015-10-17
-この１ヶ月ほど進捗状況更新出来てないが…
-トップ画像の登録(複数OK)と画像のON/OFF切り替え及び削除機能追加
-
-#### DB_topImage
+#### DB_topImage  
 > id         : int(10)      : ID  
 > name       : varchar(255) : ファイル名  
 > date       : datetime     : 日付  
@@ -31,12 +30,40 @@ Date: 2015/08/24
 > raw_data   : mediumblob   : 原寸大データ  
 > thumb_data : blob         : サムネイルデータ  
 
+あとmarkdownでの記述で記録していこうかと。  
 
+本日の予定は、サイト紹介をDB作成まで。  
 
----
-これより下はmarkdown方式ではないので…
-見えにくい…か…も…
----
+#### DB_addAccess  
+> id             : int(10)      : ID  
+> date           : datetime     : 日付  
+> name           : varchar(255) : サイト名  
+> comment        : text         : サイト紹介  
+> ad_id          : int(11)      : 郵便番号  
+> ad             : varchar(255) : 住所  
+> tel            : int(11)      : 電話番号  
+> category       : varchar(255) : カテゴリー  
+> site           : varchar(255) : サイト名  
+> url            : tinyint(2)   : サイトURL  
+> app_name       : varchar(255) : 外観画像名  
+> app_type       : tinyint(2)   : IMAGETYPE定数  
+> app_raw_data   : mediumblob   : 原寸大データ  
+> app_thumb_data : blob         : サムネイルデータ  
+> int_name       : varchar(255) : 内観画像名  
+> int_type       : tinyint(2)   : IMAGETYPE定数  
+> int_raw_data   : mediumblob   : 原寸大データ  
+> int_thumb_data : blob         : サムネイルデータ  
+
+今後の予定は、DBへ登録した分の表示を切り替え。  
+表示したいところだけをWHILEでまわして表示。  
+
+そんな感じでよろしくメカドック！！！  
+
+---  
+###### これより下はmarkdown方式知らなかったので…  
+###### 視認性皆無…(苦笑)  
+###### また気が向いたら直します…  
+---  
 
 2015-09-18
 　・トップページ変更
