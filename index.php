@@ -112,7 +112,7 @@ if (isset($_GET['id'])) {
           <li><img src="./images/p4.jpg" title="4" alt="写真4"></li>
 -->
 <?php
-// ON画像があればココに表示
+// ON画像があればココに表示_flagで識別
 $sqlImg=$pdo ->prepare("SELECT * FROM topImage WHERE flag=1 ORDER BY id DESC");
 $sqlImg->execute();
 while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
