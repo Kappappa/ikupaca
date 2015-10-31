@@ -13,6 +13,7 @@ $DB = new DB();
 
 // Class
 include_once("./inc/MHClass.php");
+$m = new MHClass;
 
 // 表示用画像
 if (isset($_GET['id'])) {
@@ -92,11 +93,13 @@ if (isset($_GET['id'])) {
   <div class="wrapper">
     <div class="content">
      
-      <div class="images">  
+      <div class="images">
         <ul class="bxslider">
+<!--
           <li><img src="./screen_images/S__87629978.jpg" title="" alt=""></li>
           <li><img src="./screen_images/S__87629979.jpg" title="" alt=""></li>
           <li><img src="./screen_images/S__87629980.jpg" title="" alt=""></li>
+-->
 <!--
           <li><img src="./screen_images/20150918_2646.jpg" title="" alt=""></li>
           <li><img src="./screen_images/20150918_2728.jpg" title="" alt=""></li>
@@ -108,6 +111,25 @@ if (isset($_GET['id'])) {
           <li><img src="./images/p3.jpg" title="3" alt="写真3"></li>
           <li><img src="./images/p4.jpg" title="4" alt="写真4"></li>
 -->
+<?php
+// ON画像があればココに表示
+$sqlImg=$pdo ->prepare("SELECT * FROM topImage WHERE flag=1 ORDER BY id DESC");
+$sqlImg->execute();
+while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
+  if($rowImg){
+    $img=	sprintf(
+      '<li><img src="data:%s;base64,%s" alt="%s" /></li>',
+      image_type_to_mime_type($rowImg['type']), //画像タイプ取得
+      base64_encode($rowImg['raw_data']), //画像データをbase64 方式によりエンコード
+      $m->h($rowImg['name']));
+    print $img.PHP_EOL;
+    print 111;
+  }else{
+  print "No_Image";
+  }
+}
+?>
+
         </ul>
         <!--slide show-->
       </div>
@@ -149,7 +171,7 @@ if (isset($_GET['id'])) {
         <!--news-->
 
         <div id="tweets">
-          <h2>[ つぶやき ]</h2>
+          <h2>[ ikupacaのNEW ]</h2>
 <?php
 // tweetデータチェック
   $DB -> tw(2);
