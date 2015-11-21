@@ -92,6 +92,7 @@ $passCookie= (!empty($_COOKIE["pass"])) ? $_COOKIE["pass"] :"";
       <li><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
       <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
+      <li class=""><a href="./imageWorks.php">作品画像一覧</a></li>
 <!--      <li><a href="../inc/pdo/create_table.php">新着情報DB作成</a></li>-->
 <!--      <li><a href="../inc/pdo/delete_table.php">新着情報DB削除</a></li>-->
 <!--      <li><a href="../inc/pdo/create_image_table.php">imageDB作成</a></li>-->

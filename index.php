@@ -1,9 +1,9 @@
 <?php
 //ログオフ
 session_start();
-// SESSIONを削除
-$_SESSION = array();
-session_destroy();
+//// SESSIONを削除
+//$_SESSION = array();
+//session_destroy();
 
 ini_set( 'display_errors', true);
 // PDO接続
@@ -123,7 +123,7 @@ while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
       base64_encode($rowImg['raw_data']), //画像データをbase64 方式によりエンコード
       $m->h($rowImg['name']));
     print $img.PHP_EOL;
-    print 111;
+//    print 111;
   }else{
   print "No_Image";
   }

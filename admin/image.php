@@ -115,8 +115,18 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error'])) {
 if (isset($_FILES['topfile']['error']) && is_int($_FILES['topfile']['error'])) {
   $table= 'topImage';
   $file= $_FILES['topfile'];
-  $flag= $DB -> topImageInsert($table,$file);
+  $flag= $DB -> ImageInsert($table,$file);
 }
+
+//$table = "workImage";
+//$DB -> create_image_table($table);
+if (isset($_FILES['workfile']['error']) && is_int($_FILES['workfile']['error'])) {
+  $table= 'workImage';
+  $file= $_FILES['workfile'];
+  $flag= $DB -> ImageInsert($table,$file);
+}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -154,6 +164,7 @@ if (isset($_FILES['topfile']['error']) && is_int($_FILES['topfile']['error'])) {
       <li class="now"><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
       <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>
+      <li class=""><a href="./imageWorks.php">作品画像一覧</a></li>
     </ul>
     </div>
     <hr>
@@ -165,20 +176,27 @@ if (isset($_FILES['topfile']['error']) && is_int($_FILES['topfile']['error'])) {
 //はーい、分岐ですよ〜
 if($flag==1){
 ?>
-<main id="heightAdmin">
-  <h2>【一般画像追加】</h2>
-  <form enctype="multipart/form-data" action="" method="post">
-    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="upfile"></p><br>
-    <p><input type="submit" value="送信"></p>
-  </form>
-<hr>
+<main id="">
   <h2>【トップ画像追加】</h2>
   <p><input class="blueButton" type="button" onclick="location.href='./imageTop.php'" value="トップ画像一覧"></p>
   <form enctype="multipart/form-data" action="" method="post">
     <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="topfile"></p><br>
     <p><input type="submit" value="送信"></p>
   </form>
-  
+  <hr>
+  <h2>【作品画像追加】</h2>
+  <p><input class="blueButton" type="button" onclick="location.href='./imageWorks.php'" value="作品画像一覧"></p>
+  <form enctype="multipart/form-data" action="" method="post">
+    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="workfile"></p><br>
+    <p><input type="submit" value="送信"></p>
+  </form>
+  <hr>
+  <h2>【一時保管画像追加】</h2>
+  <form enctype="multipart/form-data" action="" method="post">
+    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="upfile"></p><br>
+    <p><input type="submit" value="送信"></p>
+  </form>
+
 <?php
 }elseif($flag==2){
 ?>

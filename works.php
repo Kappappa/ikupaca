@@ -2,8 +2,8 @@
 //ログオフ
 session_start();
 // SESSIONを削除
-$_SESSION = array();
-session_destroy();
+//$_SESSION = array();
+//session_destroy();
 
 ini_set( 'display_errors', true);
 // PDO接続
@@ -17,7 +17,7 @@ include_once("./inc/MHClass.php");
 // 表示用画像
 if (isset($_GET['id'])) {
 	try {
-			$stmt = $pdo->prepare('SELECT type, raw_data FROM tw WHERE id = ? LIMIT 1');
+			$stmt = $pdo->prepare('SELECT * FROM workImage WHERE id = ? LIMIT 1');
 			$stmt->bindValue(1, $_GET['id'], PDO::PARAM_INT);
 			$stmt->execute();
 			if (!$row = $stmt->fetch()) {
@@ -86,6 +86,11 @@ if (isset($_GET['id'])) {
 
         <h2 id="p_back2">作品紹介</h2>
         <p id="wk1">
+<?php
+// ON画像があればココに表示_flagで識別
+$DB -> workImageSelect();
+?>
+<!--
         <a href="./works/20150918_2734.jpg" target="_blank"><img class="works" src="./works/20150918_2734.jpg" alt=""></a>
         <a href="./works/20150918_3185.jpg" target="_blank"><img class="works" src="./works/20150918_3185.jpg" alt=""></a>
         <a href="./works/20150918_4329.jpg" target="_blank"><img class="works" src="./works/20150918_4329.jpg" alt=""></a>
@@ -104,6 +109,7 @@ if (isset($_GET['id'])) {
         <a href="./works/20150918_8542.jpg" target="_blank"><img class="works" src="./works/20150918_8542.jpg" alt=""></a>
         <a href="./works/20150918_8598.jpg" target="_blank"><img class="works" src="./works/20150918_8598.jpg" alt=""></a>
         <a href="./works/20150918_9084.jpg" target="_blank"><img class="works" src="./works/20150918_9084.jpg" alt=""></a>
+-->
         </p>
        
       </div>
@@ -138,6 +144,5 @@ $(document).ready(function() {
 
 </script>
 
-</article>
 </body>
 </html>

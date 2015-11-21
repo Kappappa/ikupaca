@@ -1,9 +1,9 @@
 <?php
 //ログオフ
 session_start();
-// SESSIONを削除
-$_SESSION = array();
-session_destroy();
+//// SESSIONを削除
+//$_SESSION = array();
+//session_destroy();
 
 ini_set( 'display_errors', true);
 // PDO接続
