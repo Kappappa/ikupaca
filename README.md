@@ -24,6 +24,9 @@ calendarをDB化
 紹介サイトをDB化  
     テーブル作成  
     管理画面で制御  
+    適当に  
+    ゆるく  
+    のんびり  
 > ./inc/admin/image.php  
 > ./inc/admin/pdoClass.php  
 
