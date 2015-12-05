@@ -213,35 +213,6 @@ maping(id,name,ad,tel);
 </div>
 <hr class="hid">
 
-
-<div class="intro"> 
-<script type="text/javascript">
-  name = "ラ・カフェケニア宇治店";
-  comment = "宇治商工会議所1階にあります。";
-  ad = "〒611-0021 京都府宇治市宇治琵琶45−13";
-  tel = "TEL : 0774-21-3141";
-  blog = 'サイト : <a href="http://k-kenya.sakura.ne.jp/shop/shop-uji.html" target="_blank">ラ・カフェケニア宇治店</a>';
-  
-  id ="map_basic"+ mapi;
-  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
-  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
-  document.write(introR(int));int="";
-</script>
-<ul class="fl">
-  <li class="intro_map">
-<script type="text/javascript">
-document.write(maps);
-maping(id,name,ad,tel);
-</script>
-  </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/cafe_uji1.jpg" alt="ラカフェケニア宇治店1"></li>
-  <li class="intro_int"><img width="100%" src="./images/cafe_uji2.jpg" alt="ラカフェケニア宇治店2"></li>
-</ul>
-</div>
-<hr class="hid">
-
-
 <div class="intro"> 
 <script type="text/javascript">
   name = "Reos 槇島";

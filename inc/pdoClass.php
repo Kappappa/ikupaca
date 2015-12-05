@@ -102,6 +102,46 @@ EOS;
 
 
 
+/* ----------------------------------------------
+ *		calendar::新着情報
+ ----------------------------------------------*/
+public function calendar($cntC)
+{
+  if($cntC==""){
+    return NULL;
+  }
+  $cntC=intval($cntC);
+  // PDO接続
+  $pdo = pdoSESSION();
+  
+  try {
+    $pdo->beginTransaction();
+      $sql_calendar= sprintf('SELECT * FROM calendarTable ORDER BY id DESC LIMIT %d ;',$cntC);
+      $res_calendar=  $pdo -> query($sql_calendar);
+      $pdo->commit();
+
+    } catch (Exception $e) {
+      $pdo->rollBack();
+      echo "接続に失敗しました。" . $e->getMessage();
+    }
+    while($row= $res_calendar -> fetch(PDO::FETCH_ASSOC)) {
+      if($row['name']){
+        $img=	sprintf(
+        '<a href="?calendar=%d" target="_blank"><img src="data:%s;base64,%s" alt="%s" /> </a>'.PHP_EOL,
+        $row['id'],
+        image_type_to_mime_type($row['type']),	//	画像タイプ取得
+        base64_encode($row['raw_data']),	//	画像データをbase64 方式によりエンコード
+        $row['name']
+        );
+      }else{
+        $img="";
+      }
+      // ヒアドキュメントで表示
+echo <<<EOS
+      $img
+EOS;
+    }
+}
 
 /* ----------------------------------------------
  *		news::新着情報
@@ -570,13 +610,18 @@ if (isset($file['error']) && is_int($file['error'])) {
           $pdo->beginTransaction();
           $time= date('Y-m-d H:i:s');
           $stmtImg="";
-          
           // INSERT
           if($table=="topImage"){
             $stmtImg = $pdo -> prepare('INSERT INTO topImage (name , type , raw_data , thumb_data , date , flag) VALUES (?,?,?,?,?,?);');
           }elseif($table=="workImage"){
             $stmtImg = $pdo -> prepare('INSERT INTO workImage (name , type , raw_data , thumb_data , date , flag) VALUES (?,?,?,?,?,?);');
+          }elseif($table=="calendarTable"){
+            $stmtImg = $pdo -> prepare('INSERT INTO calendarTable (name , type , raw_data , thumb_data , date ) VALUES (?,?,?,?,?);');
+//            print "OK";
           }
+          
+          
+          if($table=="topImage" || $table=="workImage"){
             $stmtImg->execute([
                 $file['name'],
                 $info[2],
@@ -585,6 +630,15 @@ if (isset($file['error']) && is_int($file['error'])) {
                 $time,
                 1
             ]);
+          }elseif($table=="calendarTable"){
+            $stmtImg->execute([
+                $file['name'],
+                $info[2],
+                file_get_contents($file['tmp_name']),
+                ob_get_clean(), // buffer_clear
+                $time
+            ]);
+          }
           
 // Commit
             $pdo->commit();

@@ -31,6 +31,21 @@ if (isset($_GET['id'])) {
 			http_response_code($e instanceof PDOException ? 500 : $e->getCode());
 			$msgs[] = ['red', $e->getMessage()];
 	}
+}elseif(isset($_GET['calendar'])){
+  try {
+			$stmt = $pdo->prepare('SELECT type, raw_data FROM calendarTable WHERE id = ? LIMIT 1');
+			$stmt->bindValue(1, $_GET['calendar'], PDO::PARAM_INT);
+			$stmt->execute();
+			if (!$row = $stmt->fetch()) {
+					throw new RuntimeException('該当する画像は存在しません', 404);
+			}
+			header('X-Content-Type-Options: nosniff');
+			header('Content-Type: ' . image_type_to_mime_type($row['type']));
+			echo $row['raw_data'];
+	} catch (RuntimeException $e) {
+			http_response_code($e instanceof PDOException ? 500 : $e->getCode());
+			$msgs[] = ['red', $e->getMessage()];
+	}
 }
 
 ?>
@@ -167,6 +182,15 @@ while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
 // newsデータチェック
   $DB -> news(3);
 ?>
+<hr>
+<!-- calendar -->
+<h2>[ikupacaのおみせカレンダー]</h2>
+<div id="calend">
+<?php
+  $DB -> calendar(1);
+?>
+</div>
+<!-- calendar -->
         </div>
         <!--news-->
 

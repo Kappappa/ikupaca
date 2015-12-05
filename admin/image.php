@@ -110,12 +110,23 @@ if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error'])) {
 }
 
 
+
 // 画像投稿チェック
 /* アップロードがあったとき */
 if (isset($_FILES['topfile']['error']) && is_int($_FILES['topfile']['error'])) {
   $table= 'topImage';
   $file= $_FILES['topfile'];
   $flag= $DB -> ImageInsert($table,$file);
+}
+
+/* アップロードがあったとき */
+if (isset($_FILES['calendarfile']['error']) && is_int($_FILES['calendarfile']['error'])) {
+  $table= 'calendarTable';
+  $file= $_FILES['calendarfile'];
+  $flag= $DB -> ImageInsert($table,$file);
+//  print "success";
+}else{
+//  print "error";
 }
 
 //$table = "workImage";
@@ -181,6 +192,12 @@ if($flag==1){
   <p><input class="blueButton" type="button" onclick="location.href='./imageTop.php'" value="トップ画像一覧"></p>
   <form enctype="multipart/form-data" action="" method="post">
     <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="topfile"></p><br>
+    <p><input type="submit" value="送信"></p>
+  </form>
+  <hr>
+  <h2>【カレンダー】</h2>
+  <form enctype="multipart/form-data" action="" method="post">
+    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="calendarfile"></p><br>
     <p><input type="submit" value="送信"></p>
   </form>
   <hr>

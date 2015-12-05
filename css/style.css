@@ -269,9 +269,22 @@ li#n8 a:link{
 
 
 
-#tweets{
-  width: 58%;
+#news{
+  width: 30%;
 }
+#tweets{
+  width: 55%;
+}
+#calend{
+/*  width: 30%;*/
+/*  margin: 0.5rem;*/
+  padding: 0 0.5rem;
+}
+#calend img{
+  width: 95%;
+  margin: auto;
+}
+
 #news
 {
   display: block;
@@ -323,10 +336,6 @@ li#n8 a:link{
   color: #f00;
 }
 */
-
-#news{
-  width: 30%;
-}
 
 .newsHr{
   border: #333 dotted 1px;
@@ -642,6 +651,9 @@ h2,p,img,div{
     width: 90%;
     margin: 0.5rem 0;
     padding: 0.5rem;
+  }
+  #calend img{
+    width: 250px;
   }
   .newsText{
   /*  text-indent: 0.5rem;*/
