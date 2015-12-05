@@ -22,8 +22,8 @@ Date: 2015/08/24
 ### 2015-12-06  
 calendarをDB化  
 紹介サイトをDB化  
-  テーブル作成
-  管理画面で制御
+    テーブル作成  
+    管理画面で制御  
 > ./inc/admin/image.php  
 > ./inc/admin/pdoClass.php  
 
