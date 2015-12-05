@@ -19,13 +19,13 @@ Date: 2015/08/24
 ## 進捗　　
 
 
-### 2015-12-06
-#### calendarをDB化  
-#### 紹介サイトをDB化  
-テーブル作成
-管理画面で制御
-> ./inc/admin/image.php
-> ./inc/admin/pdoClass.php
+### 2015-12-06  
+calendarをDB化  
+紹介サイトをDB化  
+  テーブル作成
+  管理画面で制御
+> ./inc/admin/image.php  
+> ./inc/admin/pdoClass.php  
 
 紹介サイトは…
 １０月中旬に構想を練ってて過去ログにあった…   
