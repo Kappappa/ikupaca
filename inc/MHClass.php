@@ -1,6 +1,6 @@
 <?php
 /** -------------------------------------------------------------
- *  HayashidaMasaruClass
+ *  MasaruHayashidaClass
  *  author: M.Hayashida
  *  Date: 2015/07/05
  -------------------------------------------------------------- */
@@ -105,7 +105,7 @@ public function srcCode($page){
 /* ----------------------------------------------
  *		表示::カレンダー
  ----------------------------------------------*/
-public function calendar($year,$month){
+public static function calendar($year,$month){
 			$youbi = array("日","月","火","水","木","金","土");
 			$y = $year;
 			$m = $month;

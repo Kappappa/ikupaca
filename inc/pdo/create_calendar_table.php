@@ -1,4 +1,4 @@
-<?php // create_image_table.php
+<?php // create_calendar_table.php
 // 設定(パス要確認)
 include_once("../config.php");
 

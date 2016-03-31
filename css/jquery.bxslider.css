@@ -33,10 +33,11 @@
 	-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
 	box-shadow: 0 0 5px #ccc;
-	border:  5px solid rgba(255, 250, 231, 0.75);
+	border:  5px solid rgba(255, 255, 255, 0.75);
+/*	border:  5px solid rgba(255, 250, 231, 0.75);*/
 	left: -5px;
 /*	background: #fff;*/
-  background-color: rgba(255, 238, 180, 0.75);
+/*  background-color: rgba(255, 238, 180, 0.75);*/
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);

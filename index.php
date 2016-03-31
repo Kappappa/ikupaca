@@ -1,5 +1,6 @@
 <?php
-//ログオフ
+//  更新:: 2016_03_28
+//  容量:: 31.3 MB /100MB
 session_start();
 //// SESSIONを削除
 //$_SESSION = array();
@@ -91,7 +92,8 @@ if (isset($_GET['id'])) {
       <li id="n2"><a class="now" href="">Home</a></li>
       <li id="n3"><a href="./profile.php">Profile</a></li>
       <li id="n4"><a href="./works.php">作品紹介</a></li>
-      <li id="n5"><a href="./intro/index.php">サイト紹介</a></li>
+      <li id="n9"><a href="./event.php">イベント</a></li>
+      <li id="n5"><a href="./intro/index.php">お店紹介</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
@@ -133,7 +135,7 @@ $sqlImg->execute();
 while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
   if($rowImg){
     $img=	sprintf(
-      '<li><img src="data:%s;base64,%s" alt="%s" /></li>',
+      '<li><img src="data:%s;base64,%s" alt="%s" style="width:auto;height:500px;"></li>',
       image_type_to_mime_type($rowImg['type']), //画像タイプ取得
       base64_encode($rowImg['raw_data']), //画像データをbase64 方式によりエンコード
       $m->h($rowImg['name']));
@@ -182,18 +184,21 @@ while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
 // newsデータチェック
   $DB -> news(3);
 ?>
-<hr>
+</div>
+
 <!-- calendar -->
-<h2>[ikupacaのおみせカレンダー]</h2>
 <div id="calend">
+<h2>[おみせカレンダー]</h2>
+<div class="linking">
 <?php
   $DB -> calendar(1);
 ?>
 </div>
+</div>
 <!-- calendar -->
-        </div>
-        <!--news-->
 
+        <!--news-->
+<!--<a href="./inc/pdo/create_add_table.php">create_add_table</a>-->
         <div id="tweets">
           <h2>[ ikupacaのNEW ]</h2>
 <?php

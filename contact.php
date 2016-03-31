@@ -104,7 +104,7 @@ table.formTable th{
         <td><input size="30" type="text" name="電話番号" /></td>
       </tr>
       <tr>
-        <th>Mail<br>(半角)</th>
+        <th>メール<br>(半角)</th>
         <td><input size="30" type="text" name="Email" /><br> ※必須</td>
       </tr>
       <tr>

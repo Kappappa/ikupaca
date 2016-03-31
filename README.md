@@ -18,6 +18,25 @@ Date: 2015/08/24
   
 ## 進捗　　
 
+### 2016-01-23  
+年末から年始のタイミングで少し作成
+
+
+### 2015-12-17  
+少し更新
+> ./inc/admin/pdoClass.php  
+
+addInsert()  紹介サイト追加  
+addSelect()  紹介サイト一覧表示  
+addEdit()    選んで参照  
+
+次は、選んだのをUPDATE  
+addUpdate()の予定  
+
+そして削除DELETE  
+addDelete()予定  
+
+
 
 ### 2015-12-06  
 calendarをDB化  
@@ -32,6 +51,23 @@ calendarをDB化
 １０月中旬に構想を練ってて過去ログにあった…   
 *DB_addAccess*
 このままではちょっとアレなんで、要打ち合わせ。
+
+打ち合わせ終了  
+#### DB_addAccess  
+> id             : int(10)      : ID  
+> date           : datetime     : 日付  
+> site_name      : varchar(255) : サイト名  
+> site_comment   : text         : サイト紹介  
+> ad_id          : int(11)      : 郵便番号  
+> ad             : varchar(255) : 住所  
+> tel            : int(11)      : 電話番号  
+> site           : varchar(255) : サイト名  
+> url            : varchar(255)   : サイトURL  
+> name           : varchar(255) : ファイル名  
+> type           : tinyint(2)   : IMAGETYPE定数  
+> raw_data       : mediumblob   : 原寸大データ  
+> thumb_data     : blob         : サムネイルデータ  
+> flag           : tinyint(2)   : 使用:1,不使用:0  
 
 ### 2015-12-05
 calendar追加（画像）

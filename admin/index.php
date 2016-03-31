@@ -89,6 +89,7 @@ $passCookie= (!empty($_COOKIE["pass"])) ? $_COOKIE["pass"] :"";
       <li><a href="./newsEdit.php">新着情報編集</a></li>
       <li><a href="./twadd.php">つぶやき追加</a></li>
       <li><a href="./twEdit.php">つぶやき編集</a></li>
+      <li><a href="./site.php">サイト紹介</a></li>
       <li><a href="./image.php">画像保存</a></li>
       <li><a href="./imageAll.php">画像一覧</a></li>
       <li class=""><a href="./imageTop.php">トップ画像一覧</a></li>

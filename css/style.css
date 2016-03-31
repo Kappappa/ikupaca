@@ -8,7 +8,7 @@
 */
 }
 html{
-  background-color: rgba(255, 238, 180, 0.75);
+/*  background-color: rgba(255, 238, 180, 0.75);*/
 /*  background-color: rgb(255, 254, 241);*/
 }
 body {
@@ -42,7 +42,7 @@ hr{
 header {
   /*  border: 1px solid #edd;*/
 /*  background-color: rgb(255, 255, 255);*/
-  background-color: rgba(255, 238, 180, 0.75);
+/*  background-color: rgba(255, 238, 180, 0.75);*/
 /*  background-color: rgb(255, 254, 241);*/
   width: 100%;
 /*  background-color: rgba(255, 0, 0, 0.3);*/
@@ -55,7 +55,7 @@ header {
 }
 .header{
     text-shadow: 1px 1px 3px #fff;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+/*    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);*/
 }
 header img{
   height: 80px;
@@ -89,7 +89,8 @@ a{
 }
 
 .navi li a{
-  color: #fff;
+/*  color: #fff;*/
+  color: #000;
   display: block;
   width: 130px;
   padding: 0.2rem 0.3rem;
@@ -225,7 +226,21 @@ li#n8 a:link{
   background-color: rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease;
 }
-
+/*navi n9*/
+.navi li#n9 a:link,
+.navi li#n9 a:visited,
+li#n9 a:link{
+  background-color: #fff;
+    box-shadow: 0 0 3px 3px #eee;
+  transition: all 0.5s ease;
+    border-top: 2px dashed #ccc;
+    border-bottom: 2px dashed #ccc;
+}
+.navi li#n9 a:hover ,
+.navi li#n9 a.now{
+  background-color: rgba(204, 204, 204, 0.3);
+  transition: all 0.5s ease;
+}
 
 
 
@@ -261,7 +276,7 @@ li#n8 a:link{
 }
 
 #con{
-  overflow: hidden;
+/*  overflow: hidden;*/
   width: 100%;
 }
 
@@ -270,43 +285,61 @@ li#n8 a:link{
 
 
 #news{
-  width: 30%;
+/*  width: 30%;*/
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 #tweets{
-  width: 55%;
+/*  width: 55%;*/
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 #calend{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 /*  width: 30%;*/
 /*  margin: 0.5rem;*/
-  padding: 0 0.5rem;
+/*  display: block;*/
+/*  float: left;*/
+/*  margin: 0.5rem;*/
+/*  padding: 0.5rem;*/
+  background-color: #fcf;
+    border-top: 2px dashed #f99;
+    border-bottom: 2px dashed #f99;
+    box-shadow: 0 0 2px 2px #c66;
+  border-radius: 15px / 10px;
 }
 #calend img{
-  width: 95%;
+/*  width: 95%;*/
+  height: 300px;
   margin: auto;
 }
 
 #news
 {
-  display: block;
-  float: left;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  background-color: #0c0;
-    border-top: 2px dashed #dfd;
-    border-bottom: 2px dashed #dfd;
-    box-shadow: 0 0 2px 2px #0c0;
+/*  display: block;*/
+/*  float: left;*/
+/*  margin: 0.5rem;*/
+/*  padding: 0.5rem;*/
+  background-color: #9cf;
+    border-top: 2px dashed #99f;
+    border-bottom: 2px dashed #99f;
+    box-shadow: 0 0 2px 2px #66c;
   border-radius: 15px / 10px;
 }
 #tweets
 {
-  display: block;
-  float: left;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  background-color: #f93;
-    border-top: 2px dashed #fc9;
-    border-bottom: 2px dashed #fc9;
-    box-shadow: 0 0 2px 2px #f93;
+/*  display: block;*/
+/*  float: left;*/
+/*  margin: 0.5rem;*/
+/*  padding: 0.5rem;*/
+  background-color: #ff9;
+    border-top: 2px dashed #dd0;
+    border-bottom: 2px dashed #dd0;
+    box-shadow: 0 0 2px 2px #ff0;
   border-radius: 15px / 10px;
 }
 
@@ -357,7 +390,8 @@ li#n8 a:link{
   line-height: 1.2;
   font-size: 0.8rem;
   text-indent: 0;
-  color: #fff;
+/*  color: #fff;*/
+  color: #000;
 }
 .newsText{
 /*  text-indent: 0.5rem;*/
@@ -367,6 +401,9 @@ li#n8 a:link{
   font-size: 0.8rem;
   text-indent: 0;
 }
+
+
+
 
 
 /**/
@@ -485,6 +522,21 @@ ul.fl li{
 /*  overflow: hidden;*/
 }
 
+#e_back{
+  width: 9rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 3px 3px #ccc;
+    border-top: 2px dashed #999;
+    border-bottom: 2px dashed #999;
+  border-radius: 10px;
+  color: #333;
+    text-shadow: 1px 1px 3px #ccc;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
 #p_back{
   width: 9rem;
   padding: 0.3rem 0.5rem;
@@ -515,7 +567,9 @@ ul.fl li{
     text-shadow: 1px 1px 3px #ccc;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
-.profile{
+
+.profile,
+.event{
 /*  display: block;*/
   width: 50%;
   float: left;
@@ -524,7 +578,13 @@ ul.fl li{
   border: 1px solid #ccc;
     box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
-#pr p{
+#pr
+.event{
+  padding: 1rem;
+  margin-left: -1rem;
+}
+#pr p,
+#ev p{
 /*  display: block;*/
   float: right;
   width: 35%;
@@ -543,7 +603,10 @@ ul.fl li{
 }
 
 
-
+#site_comment{
+  width: 80%;
+  height: 6rem;
+}
 
 
 
@@ -558,11 +621,13 @@ ul.fl li{
   #p_con{
 /*    padding: 1rem;*/
   }
-  .profile{
+  .profile,
+  .event{
     float: none;
-    width: 60%;
+    width: 90%;
   }
-  #pr p{
+  #pr p,
+  #ev p{
     padding: 0.5rem;
     width: 100%;
     float: none;
@@ -647,10 +712,13 @@ h2,p,img,div{
     width: 90%;
     margin: 0 auto;
   }
-  #news ,#tweets{
+  #news ,#tweets,#calend{
     width: 90%;
     margin: 0.5rem 0;
     padding: 0.5rem;
+  }
+  #calend .linking{
+    text-align: center;
   }
   #calend img{
     width: 250px;

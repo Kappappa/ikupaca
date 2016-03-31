@@ -39,6 +39,7 @@ var id ="";
 var name = "";
 var comment = "";
 var ad = "";
+var ad2= "";
 var tel = "";
 var blog = "";
 var maps =""
@@ -117,7 +118,7 @@ function maping(id,name,ad,tel) {
 // 紹介文 (div.intro)
 function introR(int){
 //  console.log(int["name"]);
-  var str= '<dl><dt>' + int["name"] + '</dt><dd class="ad">'+int["comment"]+'</dd><dd>'+int["ad"]+'</dd><dd>'+int["tel"]+'</dd><dd class="bl">'+int["blog"]+'</dd></dl>'
+  var str= '<dl><dt>' + int["name"] + '</dt><dd class="ad">'+int["comment"]+'</dd><dd>'+int["ad"]+int["ad2"]+'</dd><dd>'+int["tel"]+'</dd><dd class="bl">'+int["blog"]+'</dd></dl>'
   return (str);
 }
 
@@ -138,7 +139,8 @@ function introR(int){
       <li id="n2"><a href="../index.php">Home</a></li>
       <li id="n3"><a href="../profile.php">Profile</a></li>
       <li id="n4"><a href="../works.php">作品紹介</a></li>
-      <li id="n5"><a class="now" href="">サイト紹介</a></li>
+      <li id="n9"><a href="./event.php">イベント</a></li>
+      <li id="n5"><a class="now" href="">お店紹介</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
@@ -172,15 +174,15 @@ function introR(int){
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/copain1.jpg" alt="copain1"></li>
+  <li class="intro_int"><img width="100%" src="./images/copain2.jpg" alt="copain2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
   </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/copain1.jpg" alt="copain1"></li>
-  <li class="intro_int"><img width="100%" src="./images/copain2.jpg" alt="copain2"></li>
 </ul>
 </div>
 <hr class="hid">
@@ -200,15 +202,15 @@ maping(id,name,ad,tel);
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/cafe_kyoto1.jpg" alt="ラカフェケニア京都店1"></li>
+  <li class="intro_int"><img width="100%" src="./images/cafe_kyoto3.jpg" alt="ラカフェケニア京都店3"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
   </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/cafe_kyoto1.jpg" alt="ラカフェケニア京都店1"></li>
-  <li class="intro_int"><img width="100%" src="./images/cafe_kyoto3.jpg" alt="ラカフェケニア京都店3"></li>
 </ul>
 </div>
 <hr class="hid">
@@ -227,15 +229,15 @@ maping(id,name,ad,tel);
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/Reos1.jpg" alt="Reos 槇島1"></li>
+  <li class="intro_int"><img width="100%" src="./images/Reos2.jpg" alt="Reos 槇島2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
   </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/Reos1.jpg" alt="Reos 槇島1"></li>
-  <li class="intro_int"><img width="100%" src="./images/Reos2.jpg" alt="Reos 槇島2"></li>
 </ul>
 </div>
 <hr class="hid">
@@ -263,15 +265,15 @@ maping(id,name,ad,tel);
 <dd class="bl">サイト：<a href="http://www.e-ne.org/ikupaca.html" target="_blank">ikupacaページ</a></dd>
 </dl>
 <ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/hairsalon_e-ne1.jpg" alt=" ヘアサロン e-ne1"></li>
+  <li class="intro_int"><img width="100%" src="./images/hairsalon_e-ne3.jpg" alt="ヘアサロン e-ne2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
   </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/hairsalon_e-ne1.jpg" alt=" ヘアサロン e-ne1"></li>
-  <li class="intro_int"><img width="100%" src="./images/hairsalon_e-ne3.jpg" alt="ヘアサロン e-ne2"></li>
 </ul>
 </div>
 <hr class="hid">
@@ -281,25 +283,26 @@ maping(id,name,ad,tel);
 <script type="text/javascript">
   name = "Ten Ants";
   comment = "アーティストと呼ばれるすべての人たちを応援する店です。";
-  ad = "〒606-8117京都市左京区一乗寺里の前町106<br>(叡電一乗寺駅から商店街東へ。点滅信号を南へすぐ東側)";
+  ad = "〒606-8117京都市左京区一乗寺里の前町106";
+  ad2= "<br>(叡電一乗寺駅から商店街東へ。点滅信号を南へすぐ東側)";
   tel = "TEL : 0774-66-1849";
   blog = 'サイト : <a href="http://amdblo.jp/mami-101010/" target="_blank">Ten Ants</a>';
   
   id ="map_basic"+ mapi;
   maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
-  int = {"name":name,"comment":comment,"ad":ad,"tel":tel,"blog":blog}; 
+  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"blog":blog}; 
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/TenAnts1.jpg" alt="TenAnts1"></li>
+  <li class="intro_int"><img width="100%" src="./images/TenAnts2.jpg" alt="TenAnts2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
 maping(id,name,ad,tel);
 </script>
   </li>
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/TenAnts1.jpg" alt="TenAnts1"></li>
-  <li class="intro_int"><img width="100%" src="./images/TenAnts2.jpg" alt="TenAnts2"></li>
 </ul>
 </div>
 <hr class="hid">

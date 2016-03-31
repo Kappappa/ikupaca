@@ -48,7 +48,7 @@ $Email = "Email";
 ------------------------------------------------------------------------------------------------*/
 
 //スパム防止のためのリファラチェック（フォームページが同一ドメインであるかどうかのチェック）(する=1, しない=0)
-$Referer_check = 0;
+$Referer_check = 1;
 
 //リファラチェックを「する」場合のドメイン ※以下例を参考に設置するサイトのドメインを指定して下さい。
 $Referer_check_domain = "chobi.net";
@@ -65,8 +65,8 @@ $Referer_check_domain = "chobi.net";
 $userMail = 1;
 
 // Bccで送るメールアドレス(複数指定する場合は「,」で区切ってください 例 $BccMail = "aa@aa.aa,bb@bb.bb";)
-//$BccMail = "hayashida.akademeia@gmail.com";
-$BccMail = "";
+$BccMail = "hayashida.akademeia@gmail.com";
+//$BccMail = "";
 
 // 管理者宛に送信されるメールのタイトル（件名）
 $subject = "ホームページのお問い合わせ";
