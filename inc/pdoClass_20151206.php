@@ -39,19 +39,6 @@ function pdoSESSION(){
 		// MySQLネイティブのプリペアドステートメント機能の代わりにエミュしたものを使う設定
 	PDO::ATTR_STRINGIFY_FETCHES => false
 		// 取得時した内容を文字列型に変換するかのオプション,int型も文字列扱い
-		
-	//,PDO::MYSQL_ATTR_LOCAL_INFILE => true
-		// csvファイルを追加可能
-		// mysql> LOAD DATA LOCAL INFILE 'hogehoge.csv' INTO TABLE sample FIELDS TERMINATED BY ',' (id,name,kana_name,sex,tel,birth);
-		// こんな感じ
-		// TERMINATED BYでコンマ区切り
-		/*
-		$file = "'hogehoge.csv'";
-$db = new PDO('mysql:host=localhost;dbname=test','root','hogehogehogehoge',
-        array(PDO::MYSQL_ATTR_LOCAL_INFILE => true));
-$sql = "LOAD DATA LOCAL INFILE $file INTO TABLE sample FIELDS TERMINATED BY ',' (id,name,kana_name,sex,tel,birth);";
-var_dump($db->exec($sql));
-		*/
 	);
 
 	$dsn = 'mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8';
@@ -141,8 +128,10 @@ public function calendar($cntC)
       if($row['name']){
         $img=	sprintf(
         '<a href="?calendar=%d" target="_blank"><img src="data:%s;base64,%s" alt="%s" /> </a>'.PHP_EOL,
+//        '<img src="data:%s;base64,%s" alt="%s" />'.PHP_EOL,
         $row['id'],
         image_type_to_mime_type($row['type']),	//	画像タイプ取得
+//        base64_encode($row['thumb_data']),	//	画像データをbase64 方式によりエンコード
         base64_encode($row['raw_data']),	//	画像データをbase64 方式によりエンコード
         $row['name']
         );
@@ -295,146 +284,6 @@ EOS;
 }
 
 /* ----------------------------------------------
- *		addEdit::サイト情報表示
- ----------------------------------------------*/
-public function addEdit($edit)
-{
-  if($edit==""){
-    return NULL;
-  }
-  $edit=intval($edit);
-  // PDO接続
-  $pdo = pdoSESSION();
-
-  $sql_addEdit= sprintf('SELECT * FROM addTable WHERE id = %d;',$edit);
-  $res_addEdit=  $pdo -> query($sql_addEdit);
-  $row= $res_addEdit -> fetch(PDO::FETCH_ASSOC);
-  if($row){
-    $id = $row["id"];
-    $time = $row["date"];
-    $site_name = $row["site_name"];
-    $site_comment = $row["site_comment"];
-    $ad_id = $row["ad_id"];
-    $ad = $row["ad"];
-    $tel = $row["tel"];
-    $site = $row["site"];
-    $url = $row["url"];
-    $flag = $row["flag"];
-    $flag= ($flag==1) ? "表示中" : "非表示";
-  //   ヒアドキュメントで表示
-echo <<<EOS
-        <form action="./addAll.php" method="post">
-        <dl>
-          <dt><label for="site_name">サイト名</label></dt>
-          <dd><input type="text" name="site_name" id="site_name" value="$site_name"></dd>
-          <dt><label for="site_comment">サイト紹介</label></dt>
-          <dd><textarea name="site_comment" id="site_comment">$site_comment</textarea></dd>
-          <dt><label for="ad_id">郵便番号</label></dt>
-          <dd><input type="text" name="ad_id" id="ad_id" value="$ad_id"></dd>
-          <dt><label for="ad">住所</label></dt>
-          <dd><input type="text" name="ad" id="ad" value="$ad"></dd>
-          <dt><label for="tel">電話番号</label></dt>
-          <dd><input type="text" name="tel" id="tel" value="$tel"></dd>
-          <dt><label for="site">リンクタイトル</label></dt>
-          <dd><input type="text" name="site" id="site" value="$site"></dd>
-          <dt><label for="url">リンクURL</label></dt>
-          <dd><input type="text" name="url" id="url" value="$url"></dd>
-        </dl>
-          <p><input type="hidden" name="addedit" id="addedit" value="$id"></p>
-          <p><input type="submit" value="確認"></p>
-        </form>
-        <form action="./newsEdit.php" method="post">
-          <p><input class="redButton" type="submit" value="削除"></p>
-          <p><input type="hidden" name="addeditDelete" id="addeditDelete" value="$id"></p>
-        </form>
-EOS;
-  }else{
-    print "error";
-  }
-}
-
-
-/* ----------------------------------------------
- *		addSelect::サイト一覧表示
- ----------------------------------------------*/
-public function addSelect()
-{
-  // PDO接続
-  $pdo = pdoSESSION();
-
-  $sql_addSelect= sprintf('SELECT * FROM addTable;');
-  $res_addSelect=  $pdo -> query($sql_addSelect);
-  while($row= $res_addSelect -> fetch(PDO::FETCH_ASSOC)){
-    $id = $row["id"];
-    $time = $row["date"];
-    $site_name = $row["site_name"];
-    $flag = $row["flag"];
-    $flag= ($flag==1) ? "表示中" : "非表示";
-  //   ヒアドキュメントで表示
-echo <<<EOS
-        <form action="./siteAll.php" method="post">
-        <dl>
-          <dd>サイト名 : $site_name<br>状態 : $flag</dd>
-        </dl>
-          <p><input type="hidden" name="edit" id="edit" value="$id"></p>
-          <p><input type="submit" value="確認"></p>
-        </form>
-        <form action="./siteAll.php" method="post">
-          <p><input class="redButton" type="submit" value="削除"></p>
-          <p><input type="hidden" name="editDelete" id="editDelete" value="$id"></p>
-        </form>
-EOS;
-  }
-}
-
-
-/* ----------------------------------------------
- *		add_INSERT::新着情報追加
- ----------------------------------------------*/
-public function addInsert($DIO)
-{
-  if($DIO==""){
-    return NULL;
-  }
-  $cols="";  // $values_カラム[0] name
-  $val="";   // $values_値[1] admin
-  $param=""; // $values_型[2] string
-  $c="";
-  $v="";
-// table名選択
-  $table= "addTable";
-  
-// 値
-  for($cnt=0;$cnt<count($DIO[1]);$cnt++){
-    $cols=($DIO[1][$cnt][0]);
-    $c=($cnt==0) ? $cols : $c.','.$cols;
-    $val=($DIO[1][$cnt][1]);
-    $param=($DIO[1][$cnt][2]);
-    $val=($param=="string") ? '"'.$val.'"' : $val;
-    $v=($cnt==0) ? $val : $v.','.$val;
-  }
-
-//fileCheck
-  $file= (!empty($DIO[2])) ? $DIO[2] : "";
-//  print ($file=="file") ? "file" : "nofile";
-
-//   PDO接続
-  $pdo = pdoSESSION();
-  try {
-    $pdo->beginTransaction();
-      $sqlp= sprintf("INSERT INTO %s ( %s ) VALUES (%s);",$table,$c,$v);
-      $sql = $pdo -> prepare($sqlp);
-      $sql-> execute();
-    $pdo->commit();
-  } catch (Exception $e) {
-    $pdo->rollBack();
-      echo "接続に失敗しました。<br>" . $e->getMessage();
-  }
-}
-
-
-
-/* ----------------------------------------------
  *		news_INSERT::新着情報追加
  ----------------------------------------------*/
 public function newsInsert($time, $title, $news)
@@ -448,8 +297,8 @@ public function newsInsert($time, $title, $news)
   //新着情報追加
   $sql = $pdo -> prepare("INSERT INTO News (news_create_time , news_title , news_text) VALUES (:time, :title , :news);");
   $sql-> bindParam(':time', $time, PDO::PARAM_STR);
-  $sql-> bindParam(':title', $title, PDO::PARAM_STR);
-  $sql-> bindParam(':news', $news, PDO::PARAM_STR);
+  $sql->bindParam(':title', $title, PDO::PARAM_STR);
+  $sql->bindParam(':news', $news, PDO::PARAM_STR);
 
   $sql->execute(); 
   return NULL;
@@ -550,11 +399,9 @@ public function tw($cnt)
     if($row['name']){
       $img=	sprintf(
              '<a class="tw_img" href="?id=%d" target="_blank"><img src="data:%s;base64,%s" alt="%s" /> </a>',
-//             '<a class="tw_img" href="?id=%d"><img src="data:%s;base64,%s" alt="%s" /> </a>',
              $row['id'],
              image_type_to_mime_type($row['type']),	//	画像タイプ取得
-//             base64_encode($row['thumb_data']),	//	画像データをbase64 方式によりエンコード
-             base64_encode($row['raw_data']),	//	画像データをbase64 方式によりエンコード
+             base64_encode($row['thumb_data']),	//	画像データをbase64 方式によりエンコード
              $row['name']
           );
     }else{
@@ -570,7 +417,7 @@ echo <<<EOS
         <p class="newsTime">$time $new_image</p>
         <p class="newsTitle">[$title]</p>
         <p class="newsText">$text</p>
-        <p class="twimage">$img</p>
+        <p>$img</p>
 
 EOS;
   }
@@ -770,14 +617,13 @@ if (isset($file['error']) && is_int($file['error'])) {
             $stmtImg = $pdo -> prepare('INSERT INTO topImage (name , type , raw_data , thumb_data , date , flag) VALUES (?,?,?,?,?,?);');
           }elseif($table=="workImage"){
             $stmtImg = $pdo -> prepare('INSERT INTO workImage (name , type , raw_data , thumb_data , date , flag) VALUES (?,?,?,?,?,?);');
-          }elseif($table=="addTable"){
-            $stmtImg = $pdo -> prepare('INSERT INTO addTable (name , type , raw_data , thumb_data , date , flag) VALUES (?,?,?,?,?,?);');
           }elseif($table=="calendarTable"){
             $stmtImg = $pdo -> prepare('INSERT INTO calendarTable (name , type , raw_data , thumb_data , date ) VALUES (?,?,?,?,?);');
 //            print "OK";
           }
-
-          if($table=="topImage" || $table=="workImage" || $table=="addTable"){
+          
+          
+          if($table=="topImage" || $table=="workImage"){
             $stmtImg->execute([
                 $file['name'],
                 $info[2],
@@ -802,7 +648,7 @@ if (isset($file['error']) && is_int($file['error'])) {
           } catch (Exception $e) {
 // Rollback
             $pdo->rollBack();
-            echo "失敗しました。1 " . $e->getMessage();
+            echo "失敗しました。1" . $e->getMessage();
             echo "___".$table;
             return '1';
           }
@@ -810,7 +656,7 @@ if (isset($file['error']) && is_int($file['error'])) {
           while (ob_get_level()) {
           ob_end_clean(); // バッファをクリア
           }
-          echo "失敗しました。2 " . $e->getMessage();
+          echo "失敗しました。2" . $e->getMessage();
           return '1';
     //        http_response_code($e instanceof PDOException ? 500 : $e->getCode());
     //            $msgs[] = ['red', $e->getMessage()];

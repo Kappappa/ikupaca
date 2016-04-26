@@ -61,9 +61,10 @@ include_once("./inc/MHClass.php");
      <ul>
       <li id="n2"><a href="./index.php">Home</a></li>
       <li id="n3"><a href="./profile.php">Profile</a></li>
-      <li id="n4"><a href="./works.php">作品紹介</a></li>
-      <li id="n9"><a class="now" href="./event.php">イベント</a></li>
+      <li id="n0"><a href="./custommade/index.php">カスタムメイド</a></li>
+      <li id="n4"><a href="./works.php">ギャラリー</a></li>
       <li id="n5"><a href="./intro/index.php">お店紹介</a></li>
+      <li id="n9"><a class="now" href="./event.php">イベント</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
@@ -82,7 +83,8 @@ include_once("./inc/MHClass.php");
       <div id="p_con">
 
         <h2 id="e_back">イベント</h2>
-        
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+<!--
         <div id="ev">
         <img class="event" src="./images/20160220_event.jpg" alt="event画像">
 <p>
@@ -93,6 +95,7 @@ include_once("./inc/MHClass.php");
 詳しくは<a class="ki" href="https://www.facebook.com/ikupaca">facebook</a>をご覧ください。
 </p>
        </div>
+-->
 <!--       div#ev-->
       </div>
 <!--   div class="p_con"-->

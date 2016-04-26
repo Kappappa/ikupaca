@@ -45,6 +45,7 @@ var blog = "";
 var maps =""
 var int = new Array(); 
 var str=""
+var description=""
 
 function maping(id,name,ad,tel) {
   /*----- 仮の位置を定義 -----*/
@@ -118,7 +119,9 @@ function maping(id,name,ad,tel) {
 // 紹介文 (div.intro)
 function introR(int){
 //  console.log(int["name"]);
-  var str= '<dl><dt>' + int["name"] + '</dt><dd class="ad">'+int["comment"]+'</dd><dd>'+int["ad"]+int["ad2"]+'</dd><dd>'+int["tel"]+'</dd><dd class="bl">'+int["blog"]+'</dd></dl>'
+  if(!int["ad2"]){int["ad2"]=""}
+  if(!int["description"]){int["description"]=""}
+  var str= '<dl><dt>' + int["name"] + '</dt><dd class="ad">'+int["comment"]+'</dd><dd>'+int["ad"]+int["ad2"]+'</dd><dd>'+int["tel"]+'</dd><dd>'+int["description"]+'</dd><dd class="bl">'+int["blog"]+'</dd></dl>'
   return (str);
 }
 
@@ -138,9 +141,10 @@ function introR(int){
      <ul>
       <li id="n2"><a href="../index.php">Home</a></li>
       <li id="n3"><a href="../profile.php">Profile</a></li>
-      <li id="n4"><a href="../works.php">作品紹介</a></li>
-      <li id="n9"><a href="./event.php">イベント</a></li>
+      <li id="n0"><a href="../custommade/index.php">カスタムメイド</a></li>
+      <li id="n4"><a href="../works.php">ギャラリー</a></li>
       <li id="n5"><a class="now" href="">お店紹介</a></li>
+      <li id="n9"><a href="../event.php">イベント</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
@@ -162,8 +166,8 @@ function introR(int){
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "Copain=A3(コパン)";
-  comment = "宇治橋商店街にある雑貨屋さんです。";
+  name = "Copain=A3(コパン)【京都】";
+  comment = "宇治橋商店街にある可愛い雑貨屋さんです。";
   ad = "〒611-0021 京都府宇治市宇治壱番3";
   tel = "TEL : 0774-24-3548";
   blog = 'ブログ : <a href="http://copain1.blog78.fc2.com/" target="_blank">Copain=A3</a>';
@@ -190,7 +194,7 @@ maping(id,name,ad,tel);
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "ラ・カフェケニア京都店";
+  name = "ラ・カフェケニア京都店【京都】";
   comment = "JR・地下鉄・近鉄京都駅から歩いて５分。<br>キャンパスプラザ京都の１階にあります。<br>会議・研修後のご休憩などにぜひご利用ください。";
   ad = "〒600-8216 京都府京都市下京区西洞院通塩小路下る東塩小路町939";
   tel = "TEL : 075-353-9150";
@@ -204,7 +208,7 @@ maping(id,name,ad,tel);
 <ul class="fl">
 <!--  写真の高さは300px-->
   <li class="intro_app"><img width="100%" src="./images/cafe_kyoto1.jpg" alt="ラカフェケニア京都店1"></li>
-  <li class="intro_int"><img width="100%" src="./images/cafe_kyoto3.jpg" alt="ラカフェケニア京都店3"></li>
+  <li class="intro_int"><img width="100%" src="./images/cafe_kyoto2.jpg" alt="ラカフェケニア京都店2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
@@ -217,8 +221,8 @@ maping(id,name,ad,tel);
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "Reos 槇島";
-  comment = "親子や高齢者など地域でのコミュニティの場です。<br>また地域の農家さんたちの協力で食育実践を目指し、自家農家(Reos畑)で野菜を作っています。<br>ランチでは主にReos畑で採れた、新鮮・無農薬野菜を使用しています。<br>営業時間11：30～16：30(定休日：土日祝日)";
+  name = "Reos 槇島【京都】";
+  comment = "親子や高齢者など地域でのコミュニティの場です。地域の農家さんたちの協力で食育実践を目指し、自家農家(Reos畑)で野菜を作っています。ランチでは主にReos畑で採れた、新鮮・無農薬野菜を使用しています。子育て支援もしております。<br>営業時間11：30～16：30(定休日：土日祝日)";
   ad = "〒611-0041 宇治市槇島町十一173-1 サンジェルマン1F";
   tel = "TEL : 0774-66-1849";
   blog = 'サイト : <a href="http://www.reos-makishima.com/index.html" target="_blank">Reos 槇島</a>';
@@ -230,8 +234,8 @@ maping(id,name,ad,tel);
 </script>
 <ul class="fl">
 <!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/Reos1.jpg" alt="Reos 槇島1"></li>
-  <li class="intro_int"><img width="100%" src="./images/Reos2.jpg" alt="Reos 槇島2"></li>
+  <li class="intro_app"><img width="100%" src="./images/reos1.jpg" alt="Reos 槇島1"></li>
+  <li class="intro_int"><img width="100%" src="./images/reos2.jpg" alt="Reos 槇島2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
@@ -245,8 +249,8 @@ maping(id,name,ad,tel);
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "ヘアサロン e-ne";
-  comment = "e-neはエキテン口コミランキングで神戸1位を獲得した美容室です。<br>100坪のアジアンリゾート風の店内はゆったりとした癒しの空間です。<br>ヘッドスパやエステ、ネイルもさぁ、HPへ";
+  name = "ヘアサロン e-ne【兵庫】";
+  comment = "e-neはエキテン口コミランキングで神戸1位を獲得した美容室です。<br>100坪のアジアンリゾート風の店内はゆったりとした癒しの空間です。";
   ad = "〒651-2144 兵庫県神戸市西区小山1-7-9";
   tel = "TEL : 078-921-1155";
   blog = 'サイト : <a href="http://www.e-ne.org/" target="_blank">神戸市西区ヘアサロン e-ne</a>';
@@ -267,7 +271,7 @@ maping(id,name,ad,tel);
 <ul class="fl">
 <!--  写真の高さは300px-->
   <li class="intro_app"><img width="100%" src="./images/hairsalon_e-ne1.jpg" alt=" ヘアサロン e-ne1"></li>
-  <li class="intro_int"><img width="100%" src="./images/hairsalon_e-ne3.jpg" alt="ヘアサロン e-ne2"></li>
+  <li class="intro_int"><img width="100%" src="./images/hairsalon_e-ne2.jpg" alt="ヘアサロン e-ne2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
@@ -281,22 +285,66 @@ maping(id,name,ad,tel);
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "Ten Ants";
-  comment = "アーティストと呼ばれるすべての人たちを応援する店です。";
-  ad = "〒606-8117京都市左京区一乗寺里の前町106";
-  ad2= "<br>(叡電一乗寺駅から商店街東へ。点滅信号を南へすぐ東側)";
-  tel = "TEL : 0774-66-1849";
+  name = "Ten Ants【京都】";
+  comment = "アーティストと呼ばれるすべての人たちを応援する店Ten Antsが移転しました！広くなって貸しスペースなども充実です！";
+  ad = "〒606-8116京都府京都市左京区一乗寺宮ノ東町47アイバハウス1階";
+  ad2= "";
+  tel = "TEL : 075-741-6859";
+  description = 'メール : <a href="mailto:mamimumemorita@me.com">mamimumemorita@me.com<a></dd><dd class="ad">営業時間</dd>';
+  description +='<dd>お店10時〜18時<br>貸しスペースは10時〜21時要相談</dd>';
+  description +='<dd class="ad">定休日</dd><dd>火曜日</dd><br><dd>イベントの無い日(女性限定)<br>11時〜14時奥のスペース開放してます！赤ちゃん連れのお母さんおばあちゃんどうぞ！';
   blog = 'サイト : <a href="http://amdblo.jp/mami-101010/" target="_blank">Ten Ants</a>';
   
   id ="map_basic"+ mapi;
   maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
-  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"blog":blog}; 
+  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"description":description,"blog":blog}; 
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
 <!--  写真の高さは300px-->
   <li class="intro_app"><img width="100%" src="./images/TenAnts1.jpg" alt="TenAnts1"></li>
   <li class="intro_int"><img width="100%" src="./images/TenAnts2.jpg" alt="TenAnts2"></li>
+<!--
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+-->
+</ul>
+</div>
+
+<div class="intro"> 
+<script type="text/javascript">
+  name = "甘さをおさえた雑貨と古道具【大阪】";
+  comment = "";
+  ad = "〒573-0057大阪府枚方市堤町10-24鍵屋別館1階101";
+  ad2= "(入ってすぐのお店です)";
+  tel = "TEL : 090-9994-9490";
+  description = '</dd><dd class="ad">営業時間</dd>';
+  description +='<dd>12:00〜17:00<br>貸しスペースは10時〜21時要相談</dd>';
+//  description +='<dd class="ad">定休日</dd><dd>月曜日・日曜日</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
+  description +='<dd class="ad">定休日</dd><dd>不定期（営業日カレンダーを確認下さい）</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
+  blog = '';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"description":description,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<dl>
+<dd class="ad">bitterさんのある鍵屋別館の詳しい情報。</dd>
+<dd class="bl">サイト：<a href="http://www.kagiyabekkan.jp/index.html" target="_blank">鍵屋別館</a></dd>
+</dl>
+<dl>
+<dd class="ad">bitterさんのお店情報。</dd>
+<dd class="bl">サイト：<a href="http://www.hira2.jp/archives/50304590.html" target="_blank">枚方通信</a></dd>
+</dl>
+<ul class="fl">
+<!--  写真の高さは300px-->
+  <li class="intro_app"><img width="100%" src="./images/bitter1.jpg" alt="bitter1"></li>
+  <li class="intro_int"><img width="100%" src="./images/bitter2.jpg" alt="bitter2"></li>
   <li class="intro_map">
 <script type="text/javascript">
 document.write(maps);
@@ -305,8 +353,11 @@ maping(id,name,ad,tel);
   </li>
 </ul>
 </div>
-<hr class="hid">
 
+
+
+
+<hr class="hid">
 
 </main>
 

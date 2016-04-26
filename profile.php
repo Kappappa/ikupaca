@@ -65,9 +65,10 @@ if (isset($_GET['id'])) {
      <ul>
       <li id="n2"><a href="./index.php">Home</a></li>
       <li id="n3"><a class="now" href="./profile.php">Profile</a></li>
-      <li id="n4"><a href="./works.php">作品紹介</a></li>
-      <li id="n9"><a href="./event.php">イベント</a></li>
+      <li id="n0"><a href="./custommade/index.php">カスタムメイド</a></li>
+      <li id="n4"><a href="./works.php">ギャラリー</a></li>
       <li id="n5"><a href="./intro/index.php">お店紹介</a></li>
+      <li id="n9"><a href="./event.php">イベント</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>

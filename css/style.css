@@ -99,6 +99,21 @@ a{
   border-radius: 20px/20px;
 }
 
+/*navi n0*/
+.navi li#n0 a:link,
+.navi li#n0 a:visited{
+  background-color: rgba(137, 0, 255, 0.44);
+  transition: all 0.5s ease;
+    border-top: 2px dashed #ddb2fa;
+    border-bottom: 2px dashed #e6a6fa;
+    box-shadow: 0 0 2px 2px #c841fa;
+}
+.navi li#n0 a:hover ,
+.navi li#n0 a.now{
+  background-color: rgba(154, 27, 247, 0.65);
+  transition: all 0.5s ease;
+}
+
 /*navi n1*/
 .navi li#n1 a:link,
 .navi li#n1 a:visited{
@@ -345,7 +360,7 @@ li#n9 a:link{
 
 .tw_img img{
   padding: 0.5rem;
-  width: 40%;
+  width: 300px;
 }
 
 #news h2
@@ -355,12 +370,21 @@ li#n9 a:link{
 /*  text-shadow: -1px -1px 1px #000;*/
   font-size: 1.2rem;
 }
+#news .all{
+  font-size: 0.8rem;
+  padding-left: 3rem;
+}
 #tweets h2
 {
   font-weight: 400;
   color: #630;
 /*  text-shadow: -1px -1px 1px #000;*/
   font-size: 1.2rem;
+}
+
+#tweets .all{
+  font-size: 0.8rem;
+  padding-left: 1rem;
 }
 /*
 #news p,#tweets p
@@ -466,11 +490,11 @@ li#n9 a:link{
 /*  display: inline;*/
   width: 25rem;
   font-size:1.2rem;
-  background-color: #ff0;
+  background-color: #ffacff;
    border-radius: 20px/20px;
-    border-top: 2px dashed #66f;
-    border-bottom: 2px dashed #66f;
-    box-shadow: 0 0 2px 2px #ff9;
+    border-top: 2px dashed #19ac4c;
+    border-bottom: 2px dashed #19ac4c;
+    box-shadow: 0 0 2px 2px #ffb6fc;
 }
 .intro dd{
   padding: 0 0 0 0.8rem;
@@ -492,7 +516,8 @@ li#n9 a:link{
 .intro .intro_int{
   width: 31%;
   min-width: 300px;
-  height: 300px;
+/*  height: 300px;*/
+/*  max-height: 300px;*/
 /*  background-color: #ccc;*/
 }
 .intro .intro_app{
@@ -567,7 +592,21 @@ ul.fl li{
     text-shadow: 1px 1px 3px #ccc;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
-
+#p_back3{
+  width: 9rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(137, 0, 255, 0.3);
+    box-shadow: 0 0 3px 3px #d899ff;
+    border-top: 2px dashed #dc66ff;
+    border-bottom: 2px dashed #d066ff;
+  border-radius: 10px;
+  color: #666;
+    text-shadow: 1px 1px 3px #ccc;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
 .profile,
 .event{
 /*  display: block;*/
@@ -589,7 +628,7 @@ ul.fl li{
   float: right;
   width: 35%;
 /*  height: auto;*/
-  background-color: rgba(0, 245, 255, 0.35);
+/*  background-color: rgba(0, 245, 255, 0.35);*/
   margin:1rem 4rem 0 0;
   padding: 0.5rem;
 }
@@ -629,7 +668,7 @@ ul.fl li{
   #pr p,
   #ev p{
     padding: 0.5rem;
-    width: 100%;
+    width: 95%;
     float: none;
   }
   
@@ -749,6 +788,11 @@ h2,p,img,div{
     height: 90%;
   }
   
+}
+
+
+.tw_img img{
+  width: 90%;
 }
 
 /*span*/

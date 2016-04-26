@@ -1,6 +1,6 @@
 <?php
-//  更新:: 2016_03_28
-//  容量:: 31.3 MB /100MB
+//  更新:: 2016_04_13
+//  容量:: 34.2 MB /100MB
 session_start();
 //// SESSIONを削除
 //$_SESSION = array();
@@ -91,9 +91,10 @@ if (isset($_GET['id'])) {
      <ul>
       <li id="n2"><a class="now" href="">Home</a></li>
       <li id="n3"><a href="./profile.php">Profile</a></li>
-      <li id="n4"><a href="./works.php">作品紹介</a></li>
-      <li id="n9"><a href="./event.php">イベント</a></li>
+      <li id="n0"><a href="./custommade/index.php">カスタムメイド</a></li>
+      <li id="n4"><a href="./works.php">ギャラリー</a></li>
       <li id="n5"><a href="./intro/index.php">お店紹介</a></li>
+      <li id="n9"><a href="./event.php">イベント</a></li>
       <li id="n6"><a href="http://ameblo.jp/koharu-biyori-rena/" target="_blank">ブログ</a></li>
       <li id="n7"><a href="https://www.facebook.com/ikupaca" target="_blank">facebook</a></li>
       <li id="n1"><a href="https://instagram.com/IKUPACA/" target="_blank">Instagram</a></li>
@@ -122,29 +123,31 @@ if (isset($_GET['id'])) {
           <li><img src="./screen_images/20150918_2728.jpg" title="" alt=""></li>
           <li><img src="./screen_images/20150918_2734.jpg" title="" alt=""></li>
 -->
+
+          <li><img src="./topimages/index1.jpg" title="1" alt="写真1"></li>
+          <li><img src="./topimages/index2.jpg" title="2" alt="写真2"></li>
+          <li><img src="./topimages/index3.jpg" title="3" alt="写真3"></li>
+          <li><img src="./topimages/index4.jpg" title="4" alt="写真4"></li>
 <!--
-          <li><img src="./images/p1.jpg" title="1" alt="写真1"></li>
-          <li><img src="./images/p2.jpg" title="2" alt="写真2"></li>
-          <li><img src="./images/p3.jpg" title="3" alt="写真3"></li>
-          <li><img src="./images/p4.jpg" title="4" alt="写真4"></li>
+          <li><img src="./topimages/index5.jpg" title="5" alt="写真5"></li>
+          <li><img src="./topimages/index6.jpg" title="6" alt="写真6"></li>
 -->
 <?php
 // ON画像があればココに表示_flagで識別
-$sqlImg=$pdo ->prepare("SELECT * FROM topImage WHERE flag=1 ORDER BY id DESC");
-$sqlImg->execute();
-while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
-  if($rowImg){
-    $img=	sprintf(
-      '<li><img src="data:%s;base64,%s" alt="%s" style="width:auto;height:500px;"></li>',
-      image_type_to_mime_type($rowImg['type']), //画像タイプ取得
-      base64_encode($rowImg['raw_data']), //画像データをbase64 方式によりエンコード
-      $m->h($rowImg['name']));
-    print $img.PHP_EOL;
-//    print 111;
-  }else{
-  print "No_Image";
-  }
-}
+//$sqlImg=$pdo ->prepare("SELECT * FROM topImage WHERE flag=1 ORDER BY id DESC");
+//$sqlImg->execute();
+//while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
+//  if($rowImg){
+//    $img=	sprintf(
+//      '<li><img src="data:%s;base64,%s" alt="%s" style="width:auto;"></li>',
+//      image_type_to_mime_type($rowImg['type']), //画像タイプ取得
+//      base64_encode($rowImg['raw_data']), //画像データをbase64 方式によりエンコード
+//      $m->h($rowImg['name']));
+//    print $img.PHP_EOL;
+//  }else{
+//  print "No_Image";
+//  }
+//}
 ?>
 
         </ul>
@@ -179,10 +182,10 @@ while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
       <div id="con">
        
         <div id="news">
-          <h2>[ 新着情報 ]</h2>
+          <h2>[ 新着情報 ] <span class="all"><a href="./news.php">->全件表示</a></span></h2>
 <?php
 // newsデータチェック
-  $DB -> news(3);
+  $DB -> news(5);
 ?>
 </div>
 
@@ -200,7 +203,7 @@ while($rowImg = $sqlImg -> fetch(PDO::FETCH_ASSOC)){
         <!--news-->
 <!--<a href="./inc/pdo/create_add_table.php">create_add_table</a>-->
         <div id="tweets">
-          <h2>[ ikupacaのNEW ]</h2>
+          <h2>[ ikupacaのNEW ] <span class="all"><a href="./ikupacanew.php">->全件表示</a></span></h2>
 <?php
 // tweetデータチェック
   $DB -> tw(2);
