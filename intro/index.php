@@ -178,7 +178,6 @@ function introR(int){
   document.write(introR(int));int="";
 </script>
 <ul class="fl">
-<!--  写真の高さは300px-->
   <li class="intro_app"><img width="100%" src="./images/copain1.jpg" alt="copain1"></li>
   <li class="intro_int"><img width="100%" src="./images/copain2.jpg" alt="copain2"></li>
   <li class="intro_map">
@@ -282,6 +281,7 @@ maping(id,name,ad,tel);
 </div>
 <hr class="hid">
 
+<hr class="hid">
 
 <div class="intro"> 
 <script type="text/javascript">
@@ -314,10 +314,11 @@ maping(id,name,ad,tel);
 -->
 </ul>
 </div>
+<hr class="hid">
 
 <div class="intro"> 
 <script type="text/javascript">
-  name = "甘さをおさえた雑貨と古道具【大阪】";
+  name = "甘さをおさえた雑貨と古道具 bitter【大阪】";
   comment = "";
   ad = "〒573-0057大阪府枚方市堤町10-24鍵屋別館1階101";
   ad2= "(入ってすぐのお店です)";
@@ -325,7 +326,7 @@ maping(id,name,ad,tel);
   description = '</dd><dd class="ad">営業時間</dd>';
   description +='<dd>12:00〜17:00<br>貸しスペースは10時〜21時要相談</dd>';
 //  description +='<dd class="ad">定休日</dd><dd>月曜日・日曜日</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
-  description +='<dd class="ad">定休日</dd><dd>不定期（営業日カレンダーを確認下さい）</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
+  description +='<dd class="ad">定休日</dd><dd>不定休（営業日カレンダーを確認下さい）</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
   blog = '';
   
   id ="map_basic"+ mapi;
@@ -353,11 +354,48 @@ maping(id,name,ad,tel);
   </li>
 </ul>
 </div>
-
-
-
-
 <hr class="hid">
+
+
+<div class="intro"> 
+<script type="text/javascript">
+  name = "HOWBI 【兵庫】";
+  comment = "";
+  ad = "〒675-1327兵庫県小野市市場町651";
+  ad2= "";
+  tel = "TEL : 090-8375-4085";
+  description = '</dd><br><dd class="">神戸電鉄市場駅から徒歩7分。<br>山陽自動車道三木小野インター降りて小野方面。<br>一つ目の信号市場東を左折。<br>ローソンの信号を右折次の信号市場北の角です。<br>駐車場は歩道橋越えてすぐ左折ナルミ株の倉庫裏に11台。<br>土日祝はHOWBIすぐ裏に駐車場をご用意しております。</dd><br>';
+  description += '</dd><dd class="">HOWBI(ほうび)とは<br>HOuse<br>Wood<br>BIrd<br>の頭文字をとった造語です。<br>House…落ち着く空間<br>Wood…自然な空間<br>Bird…自由な空間<br>自分へのごほうびにおくつろぎください！がコンセプトです。<br>HOWBIに来た人がイキイキパワフルである空間<br>みんなが笑顔になる空間<br>おもろい空間を作っています！</dd><br>';
+  description += '</dd><dd class="ad">営業時間</dd>';
+  description +='<dd>10時から17時<br>金・土は夜カフェ18時半から22時</dd>';
+  description +='<dd class="ad">定休日</dd><dd>不定休（木曜日）';
+  blog = '';
+  
+  id ="map_basic"+ mapi;
+  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
+  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"description":description,"blog":blog}; 
+  document.write(introR(int));int="";
+</script>
+<dl>
+<dd class="bl">サイト：<a href="https://www.facebook.com/HOWBI-1376252502698035/timeline" target="_blank">facebook</a></dd>
+</dl>
+<ul class="fl">
+  <li class="intro_app"><img width="100%" src="./images/howbi1.jpg" alt="howbi1"></li>
+  <li class="intro_int"><img width="100%" src="./images/howbi2.jpg" alt="howbi2"></li>
+  <li class="intro_map">
+<script type="text/javascript">
+document.write(maps);
+maping(id,name,ad,tel);
+</script>
+  </li>
+</ul>
+</div>
+<hr class="hid">
+
+
+
+
+
 
 </main>
 

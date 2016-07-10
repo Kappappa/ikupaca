@@ -532,6 +532,9 @@ ul.fl li{
   float: left;
 }
 
+ul.fl img{
+  width: 95%;
+}
 
 
 #p_con{
