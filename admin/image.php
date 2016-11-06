@@ -188,13 +188,15 @@ if (isset($_FILES['workfile']['error']) && is_int($_FILES['workfile']['error']))
 if($flag==1){
 ?>
 <main id="">
-  <h2>【トップ画像追加】</h2>
-  <p><input class="blueButton" type="button" onclick="location.href='./imageTop.php'" value="トップ画像一覧"></p>
-  <form enctype="multipart/form-data" action="" method="post">
-    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="topfile"></p><br>
-    <p><input type="submit" value="送信"></p>
-  </form>
-  <hr>
+  <?php
+//  <h2>【トップ画像追加】</h2>
+//  <p><input class="blueButton" type="button" onclick="location.href='./imageTop.php'" value="トップ画像一覧"></p>
+//  <form enctype="multipart/form-data" action="" method="post">
+//    <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="topfile"></p><br>
+//    <p><input type="submit" value="送信"></p>
+//  </form>
+//  <hr>
+    ?>
   <h2>【カレンダー】</h2>
   <form enctype="multipart/form-data" action="" method="post">
     <p><legend>画像ファイルを選択<br>(GIF, JPEG, PNGのみ対応)</legend><input type="file" name="calendarfile"></p><br>

@@ -124,6 +124,8 @@ $passCookie= (!empty($_COOKIE["pass"])) ? $_COOKIE["pass"] :"";
 <?php }elseif($flag==1){ ?>
 
 <h2>【管理画面】</h2>
+<p>トップ画像追加は<a href="./imageTop.php">[こちら]</a>へ！！！</p>
+<hr>
 <p>新着情報の追加は<a href="./news.php">[新着情報追加]</a>へ。</p>
 <p>新着情報の編集は<a href="./newsEdit.php">[新着情報編集]</a>へ。</p>
 <p>画像の登録は<a href="./image.php">[画像登録]</a>へ。</p>

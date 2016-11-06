@@ -1,5 +1,5 @@
 <?php
-//  更新:: 2016_06_14
+//  更新:: 2016_10_31
 //  容量:: 34.2 MB /100MB
 session_start();
 //// SESSIONを削除
@@ -11,6 +11,27 @@ ini_set( 'display_errors', true);
 include_once("./inc/config.php");
 include_once("./inc/pdoClass.php");
 $DB = new DB();
+include_once('./inc/uno.class.php');
+$UNO= new Uno();
+// 表示のみ($flag:1)
+$image_flag= array(1);
+$topOnImages= $UNO-> selectTopImages(1,$image_flag,4);
+
+// ディレクトリ内のサイズ計算
+function dir_size($dir){
+  $total_size = 0;
+  $handle = opendir($dir);
+  while ($file = readdir($handle)) {
+    if ($file != '..' && $file != '.' && !is_dir($dir.'/'.$file)) {
+      $total_size +=  filesize($dir.'/'.$file); 
+    } else if (is_dir($dir.'/'.$file) && $file != '..' && $file != '.') {
+      $total_size += dir_size($dir.'/'.$file);
+    }
+  }
+  closedir($handle);
+  return $total_size;
+}
+$i= number_format(dir_size('./')*1.25/1048576,1);
 
 // Class
 include_once("./inc/MHClass.php");
@@ -113,6 +134,19 @@ if (isset($_GET['id'])) {
      
       <div class="images">
         <ul class="bxslider">
+<?php
+// 表示
+if($topOnImages){
+  foreach($topOnImages as $key => $val){
+//    $ViewImage= "./admin/".$val["file_name"];
+    $ViewImage= "./topimages/".$val["file_name"];
+    $id= $val["id"];
+    echo '<li><img src="'.$ViewImage.'" alt="top'.$id.'" title="topImage'.$id.'"></li>'.PHP_EOL;
+  }
+}else{
+  echo "画像はありません";
+}
+?>
 <!--
           <li><img src="./screen_images/S__87629978.jpg" title="" alt=""></li>
           <li><img src="./screen_images/S__87629979.jpg" title="" alt=""></li>
@@ -124,10 +158,12 @@ if (isset($_GET['id'])) {
           <li><img src="./screen_images/20150918_2734.jpg" title="" alt=""></li>
 -->
 
+<!--
           <li><img src="./topimages/index1.jpg" title="1" alt="写真1"></li>
           <li><img src="./topimages/index2.jpg" title="2" alt="写真2"></li>
           <li><img src="./topimages/index3.jpg" title="3" alt="写真3"></li>
           <li><img src="./topimages/index4.jpg" title="4" alt="写真4"></li>
+-->
 <!--
           <li><img src="./topimages/index5.jpg" title="5" alt="写真5"></li>
           <li><img src="./topimages/index6.jpg" title="6" alt="写真6"></li>
@@ -221,6 +257,7 @@ if (isset($_GET['id'])) {
   <!-- div class="wrapper" -->
 
 <?php include_once("./tmp/footer.php"); ?>
+    <p class="mb"><?= $i."MB / 100MB"; ?></p>
 </article>
 </body>
 </html>

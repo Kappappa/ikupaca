@@ -281,40 +281,6 @@ maping(id,name,ad,tel);
 </div>
 <hr class="hid">
 
-<hr class="hid">
-
-<div class="intro"> 
-<script type="text/javascript">
-  name = "Ten Ants【京都】";
-  comment = "アーティストと呼ばれるすべての人たちを応援する店Ten Antsが移転しました！広くなって貸しスペースなども充実です！";
-  ad = "〒606-8116京都府京都市左京区一乗寺宮ノ東町47アイバハウス1階";
-  ad2= "";
-  tel = "TEL : 075-741-6859";
-  description = 'メール : <a href="mailto:mamimumemorita@me.com">mamimumemorita@me.com<a></dd><dd class="ad">営業時間</dd>';
-  description +='<dd>お店10時〜18時<br>貸しスペースは10時〜21時要相談</dd>';
-  description +='<dd class="ad">定休日</dd><dd>火曜日</dd><br><dd>イベントの無い日(女性限定)<br>11時〜14時奥のスペース開放してます！赤ちゃん連れのお母さんおばあちゃんどうぞ！';
-  blog = 'サイト : <a href="http://amdblo.jp/mami-101010/" target="_blank">Ten Ants</a>';
-  
-  id ="map_basic"+ mapi;
-  maps = '<div id="'+id+'" style="width: 100%; height: 300px;"></div>';
-  int = {"name":name,"comment":comment,"ad":ad,"ad2":ad2,"tel":tel,"description":description,"blog":blog}; 
-  document.write(introR(int));int="";
-</script>
-<ul class="fl">
-<!--  写真の高さは300px-->
-  <li class="intro_app"><img width="100%" src="./images/TenAnts1.jpg" alt="TenAnts1"></li>
-  <li class="intro_int"><img width="100%" src="./images/TenAnts2.jpg" alt="TenAnts2"></li>
-<!--
-  <li class="intro_map">
-<script type="text/javascript">
-document.write(maps);
-maping(id,name,ad,tel);
-</script>
-  </li>
--->
-</ul>
-</div>
-<hr class="hid">
 
 <div class="intro"> 
 <script type="text/javascript">
@@ -324,7 +290,7 @@ maping(id,name,ad,tel);
   ad2= "(入ってすぐのお店です)";
   tel = "TEL : 090-9994-9490";
   description = '</dd><dd class="ad">営業時間</dd>';
-  description +='<dd>12:00〜17:00<br>貸しスペースは10時〜21時要相談</dd>';
+  description +='<dd>11:00〜16:00<br>※貸しスペースは要相談</dd>';
 //  description +='<dd class="ad">定休日</dd><dd>月曜日・日曜日</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
   description +='<dd class="ad">定休日</dd><dd>不定休（営業日カレンダーを確認下さい）</dd><dd>(※毎月第2日曜日の五六市の日はオープンしています)';
   blog = '';
